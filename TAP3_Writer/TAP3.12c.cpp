@@ -1408,6 +1408,8 @@ int main(int argc, const char* argv[])
 			}	// end of file loop
 			
 			otlFileStream.close();
+
+			// Writing RAP acknowledgement files
 	
 	}
 	catch (otl_exception &otlEx) {
