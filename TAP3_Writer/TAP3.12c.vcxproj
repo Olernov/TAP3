@@ -68,7 +68,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Oracle11\client_1\oci\include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;c:\Projects\TAP3\TAP3\TAP3_Writer\;c:\Projects\LibNCFtp\Strn;c:\Projects\LibNCFtp\sio;c:\Projects\LibNCFtp\libncftp;c:\Projects\TAP3\TAP3\ASN_Structures\;c:\Projects\TAP3\</IncludePath>
+    <IncludePath>C:\Oracle11\client_1\oci\include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;c:\Projects\TAP3\TAP3\TAP3_Writer\;c:\Projects\LibNCFtp\Strn;c:\Projects\LibNCFtp\sio;c:\Projects\LibNCFtp\libncftp;c:\Projects\TAP3\TAP3\RAP_ASN_Structures\;c:\Projects\TAP3\TAP3\ASN_Structures\;c:\Projects\TAP3\</IncludePath>
     <LibraryPath>c:\Projects\LibNCFtp\libncftp\Release\;C:\Oracle11\client_1\oci\lib\msvc;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;$(WindowsSdkDir)lib\winv6.3\um\x86</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_exe|Win32'">

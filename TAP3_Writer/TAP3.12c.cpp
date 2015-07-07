@@ -4,9 +4,11 @@
 #include "stdafx.h"
 #include "DataInterChange.h"
 #include "BatchControlInfo.h"
+#include "Acknowledgement.h"
 
 #include "TAP_Constants.h"
 #include "ConfigContainer.h"
+//#include "constr_TYPE.h"
 
 #define OTL_ORA9I // Compile OTL 4.0/OCI9i
 // #define OTL_ORA8
@@ -1268,17 +1270,87 @@ long FillDataIntercharge(DataInterChange* dataInterchange, otl_nocommit_stream& 
 
 	return fileID;
 }
+//------------------------------
+long FillRAPAcknowledgement(Acknowledgement* acknowledgement, otl_nocommit_stream& otlFileStream, string& filename, string& roamingHubName)
+{
+	long fileID;
+	string sender, recipient, fileSequenceNumber, fileTypeIndicator, rapFileSeqNum, creationStamp, creationUTCOffset;
+		
+	otlFileStream
+		>> fileID
+		>> sender
+		>> recipient
+		>> fileSequenceNumber
+		>> fileTypeIndicator
+		>> creationStamp
+		>> creationUTCOffset
+		>> roamingHubName;
 
+	OCTET_STRING_fromBuf ( &acknowledgement->sender, sender.c_str(), sender.size() );
+	OCTET_STRING_fromBuf ( &acknowledgement->recipient, recipient.c_str(), recipient.size() );
+	OCTET_STRING_fromBuf ( &acknowledgement->rapFileSequenceNumber, fileSequenceNumber.c_str(), fileSequenceNumber.size() );
+	acknowledgement->ackFileCreationTimeStamp.localTimeStamp = OCTET_STRING_new_fromBuf(&asn_DEF_LocalTimeStamp, creationStamp.c_str(), creationStamp.size() );
+	acknowledgement->ackFileCreationTimeStamp.utcTimeOffset = OCTET_STRING_new_fromBuf(&asn_DEF_UtcTimeOffset, creationUTCOffset.c_str(), creationUTCOffset.size() );
+	acknowledgement->ackFileAvailableTimeStamp.localTimeStamp = OCTET_STRING_new_fromBuf(&asn_DEF_LocalTimeStamp,  creationStamp.c_str(), creationStamp.size() );
+	acknowledgement->ackFileAvailableTimeStamp.utcTimeOffset = OCTET_STRING_new_fromBuf(&asn_DEF_UtcTimeOffset,  creationUTCOffset.c_str(), creationUTCOffset.size() );
+	
+	// construct RAP acknowledge filename
+	if (!fileTypeIndicator.empty() && (fileTypeIndicator == "T" || fileTypeIndicator == "t")) {
+		// Test RAP file
+		filename = "AT";
+		acknowledgement->fileTypeIndicator = OCTET_STRING_new_fromBuf(&asn_DEF_FileTypeIndicator, fileTypeIndicator.c_str(), fileTypeIndicator.size());
+	}
+	else {
+		// Commercial RAP file
+		filename = "AC";
+	}
+
+	filename += sender + recipient + fileSequenceNumber;
+
+	return fileID;
+}
+//------------------------------
+template<class T>
+int EncodeAndUpload(string filename, string fileTypeDescr, asn_TYPE_descriptor_t* pASNTypeDescr, T* pASNStructure, Config& config, string roamingHubName)
+{
+	string fullFileName;
+#ifdef WIN32
+	fullFileName = (config.GetOutputDirectory().empty() ? "." : config.GetOutputDirectory()) + "\\" + filename;
+#else
+	fullFileName = (config.GetOutputDirectory().empty() ? "." : config.GetOutputDirectory()) + "/" + filename;
+#endif
+
+	FILE *fTapFile = fopen(fullFileName.c_str(), "wb");
+	if (!fTapFile) {
+		log(filename, LOG_ERROR, string("Unable to open file ") + fullFileName + " for writing.");
+		return TL_FILEERROR;
+	}
+	asn_enc_rval_t encodeRes = der_encode(pASNTypeDescr, pASNStructure, write_out, fTapFile);
+
+	fclose(fTapFile);
+
+	if (encodeRes.encoded == -1) {
+		log(filename, LOG_ERROR, string("Error while encoding ASN file. Error code ") + string(encodeRes.failed_type ? encodeRes.failed_type->name : "unknown"));
+		return TL_DECODEERROR;
+	}
+
+	log(filename, LOG_INFO, fileTypeDescr + " successfully created.");
+
+	// Upload file to FTP-server
+	FtpSetting ftpSetting = config.GetFTPSetting(roamingHubName);
+	if (!ftpSetting.ftpServer.empty()) {
+		if (!UploadFileToFtp(filename, fullFileName, ftpSetting, roamingHubName)) {
+			return TL_FILEERROR;
+		}
+	}
+	else
+		log(filename, LOG_INFO, "FTP server is not set in cfg-file for roaming hub " + roamingHubName + ". No uploading done.");
+
+	return TL_OK;
+}
 //------------------------------
 int main(int argc, const char* argv[])
 {
-	// установим pShortName на имя файла, отбросив путь
-	/*pShortName =  strrchr(argv[1],'\\');
-	if(!pShortName)
-		pShortName=argv[1];
-	else
-		pShortName++;
-*/
 	try {
 
 		if(argc>1) {
@@ -1286,10 +1358,8 @@ int main(int argc, const char* argv[])
 				debugMode = 1;
 			}
 		}
-	
 		
 		ofsLog.open("TAP3Writer.log", ofstream::app);
-
 		// чтение файла конфигурации
 		ifstream ifsSettings ("TAPWriter.cfg", ifstream::in);
 		if (!ifsSettings.is_open())	{
@@ -1327,8 +1397,10 @@ int main(int argc, const char* argv[])
 	
 		log("", LOG_INFO, "-------- TAP3 writer started --------");
 
+		//--------------------------------
+		// Writing TAP files
+		//--------------------------------
 		otl_nocommit_stream otlFileStream;
-		
 		otlFileStream.open( 1 /*stream buffer size in logical rows*/, 
 					"select FILE_ID /* long */, FILENAME /*char[255],in*/, SENDER /*char[20],in*/, RECIPIENT /*char[20],in*/, SEQUENCE_NUMBER /*char[10],in*/, \
 					to_char(CREATION_STAMP, 'yyyymmddhh24miss') /*char[20],in*/ , CREATION_UTCOFF /*char[10],in*/,\
@@ -1345,6 +1417,10 @@ int main(int argc, const char* argv[])
 		while( ! otlFileStream.eof()) {
 
 			dataInterchange = (DataInterChange*)calloc(1, sizeof(DataInterChange));
+			if (!dataInterchange) {
+				log("", LOG_ERROR, "Failed to allocate memory for TAP DataInterChange structure. Exiting...");
+				exit(TL_UNKNOWN);
+			}
 			
 			long fileID;
 			string filename, roamingHubName, fileAvailableTimeStamp;
@@ -1409,8 +1485,55 @@ int main(int argc, const char* argv[])
 			
 			otlFileStream.close();
 
+			//--------------------------------
 			// Writing RAP acknowledgement files
-	
+			//--------------------------------
+			otlFileStream.open( 1 /*stream buffer size in logical rows*/, 
+					"select f.FILE_ID /*long*/, BILLING.TAP3.GetOurTAPCode /*char[20],in*/, SENDER /*char[20],in*/,\
+						SEQUENCE_NUMBER /*char[10],in*/, FILE_TYPE_INDICATOR /* char[1] */, \
+						to_char(sysdate, 'yyyymmddhh24miss') /*char[20],in*/, BILLING.TAP3.GetOurUTCOffset/*char[10],in*/,\
+						h.NAME /*char[100]*/\
+					from BILLING.RAP_FILE f, BILLING.TMOBILENETWORK n, BILLING.TROAMINGHUB h \
+					where STATUS = :status /*long*/ and n.OBJECT_NO=f.MOBILENETWORK_ID and h.OBJECT_NO=n.ROAMINGHUB_ID", otlConnect);
+			
+			otlFileStream << (long) INRAP_READY_TO_SEND_ACK; // status
+			while (!otlFileStream.eof()) {
+				Acknowledgement* acknowledgement = (Acknowledgement*) calloc(1, sizeof(Acknowledgement));
+
+				if (!acknowledgement) {
+					log("", LOG_ERROR, "Failed to allocate memory for RAP Acknowledgement structure. Exiting...");
+					exit(TL_UNKNOWN);
+				}
+
+				long fileID;
+				string filename, roamingHubName, fileAvailableTimeStamp;
+				fileID = FillRAPAcknowledgement(acknowledgement, otlFileStream, filename, roamingHubName);
+			
+				// UPDATE STATUS and ACK_SENT in DB
+				otl_nocommit_stream otlStream;
+				otlStream.open( 1, // stream buffer size in logical rows
+					"UPDATE BILLING.RAP_FILE set status=:hStatus /*long*/, ack_sent=sysdate \
+						where file_id=:hFileId /*long*/", otlConnect ); 
+				otlStream 
+					<< (long) INRAP_ACK_SENT 
+					<< fileID;
+
+				otlStream.flush();
+				otlStream.close();
+
+				// ENCODING and Uploading 
+				int encodeAndUploadRes = EncodeAndUpload(filename, "RAP acknowledgement", &asn_DEF_Acknowledgement, acknowledgement, config, roamingHubName);
+				ASN_STRUCT_FREE(asn_DEF_Acknowledgement, acknowledgement);
+				acknowledgement = NULL;	
+
+				if (encodeAndUploadRes != TL_OK) 
+					otlConnect.rollback();
+				else
+					otlConnect.commit();
+				
+				otlLogConnect.commit();
+
+			}
 	}
 	catch (otl_exception &otlEx) {
 		otlConnect.rollback();
