@@ -78,9 +78,6 @@
     <ClInclude Include="..\ASN_Structures\asn_codecs_prim.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\ASN_Structures\asn_internal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\ASN_Structures\asn_SEQUENCE_OF.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1237,6 +1234,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\ConfigContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ASN_Structures\asn_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RAP_ASN_Structures\asn_internal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

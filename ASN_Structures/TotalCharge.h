@@ -22,7 +22,6 @@ typedef AbsoluteAmount_t	 TotalCharge_t;
 
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_TotalCharge;
-extern ber_tlv_tag_t asn_DEF_TotalCharge_tags_1[];
 asn_struct_free_f TotalCharge_free;
 asn_struct_print_f TotalCharge_print;
 asn_constr_check_f TotalCharge_constraint;

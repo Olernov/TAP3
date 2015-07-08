@@ -48,7 +48,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -68,7 +68,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Oracle11\client_1\oci\include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;c:\Projects\TAP3\TAP3\TAP3_Writer\;c:\Projects\LibNCFtp\Strn;c:\Projects\LibNCFtp\sio;c:\Projects\LibNCFtp\libncftp;c:\Projects\TAP3\TAP3\RAP_ASN_Structures\;c:\Projects\TAP3\TAP3\ASN_Structures\;c:\Projects\TAP3\</IncludePath>
+    <IncludePath>C:\Oracle11\client_1\oci\include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;c:\Projects\TAP3\TAP3\TAP3_Writer\;c:\Projects\LibNCFtp\Strn;c:\Projects\LibNCFtp\sio;c:\Projects\LibNCFtp\libncftp;c:\Projects\TAP3\TAP3\ASN_Structures\;c:\Projects\TAP3\TAP3\RAP_ASN_Structures\;c:\Projects\TAP3\</IncludePath>
     <LibraryPath>c:\Projects\LibNCFtp\libncftp\Release\;C:\Oracle11\client_1\oci\lib\msvc;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;$(WindowsSdkDir)lib\winv6.3\um\x86</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_exe|Win32'">
@@ -83,6 +83,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Oracle11\client_1\oci\include; $(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);c:\Projects\TAP3\TAP3\TAP3_Writer\;c:\Projects\LibNCFtp\Strn;c:\Projects\LibNCFtp\sio;c:\Projects\LibNCFtp\libncftp;c:\Projects\TAP3\TAP3\RAP_ASN_Structures\;c:\Projects\TAP3\TAP3\ASN_Structures\;c:\Projects\TAP3\</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);c:\Projects\LibNCFtp\libncftp\Release\;C:\Oracle11\client_1\oci\lib\msvc;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;$(WindowsSdkDir)lib\winv6.3\um\x86</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -135,7 +137,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -146,6 +148,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);oci.lib;sio.lib;strn.lib;libncftp.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -519,6 +522,7 @@
     <ClInclude Include="..\RAP_ASN_Structures\AckFileAvailableTimeStamp.h" />
     <ClInclude Include="..\RAP_ASN_Structures\AckFileCreationTimeStamp.h" />
     <ClInclude Include="..\RAP_ASN_Structures\Acknowledgement.h" />
+    <ClInclude Include="..\RAP_ASN_Structures\asn_internal.h" />
     <ClInclude Include="..\RAP_ASN_Structures\AuditControlInfoError.h" />
     <ClInclude Include="..\RAP_ASN_Structures\BatchControlError.h" />
     <ClInclude Include="..\RAP_ASN_Structures\EndMissingSeqNumber.h" />

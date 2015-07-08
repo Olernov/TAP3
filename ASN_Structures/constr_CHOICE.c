@@ -69,7 +69,7 @@ static void _set_present_idx(void *sptr, int offset, int size, int pres);
 /*
  * Tags are canonically sorted in the tag to member table.
  */
-/*static*/ int
+static int
 _search4tag(const void *ap, const void *bp) {
 	const asn_TYPE_tag2member_t *a = (const asn_TYPE_tag2member_t *)ap;
 	const asn_TYPE_tag2member_t *b = (const asn_TYPE_tag2member_t *)bp;

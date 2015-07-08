@@ -8,7 +8,6 @@
 
 #include "TAP_Constants.h"
 #include "ConfigContainer.h"
-//#include "constr_TYPE.h"
 
 #define OTL_ORA9I // Compile OTL 4.0/OCI9i
 // #define OTL_ORA8
@@ -1286,6 +1285,8 @@ long FillRAPAcknowledgement(Acknowledgement* acknowledgement, otl_nocommit_strea
 		>> creationUTCOffset
 		>> roamingHubName;
 
+	log(filename, LOG_INFO, "Creating RAP acknowledgement file");
+
 	OCTET_STRING_fromBuf ( &acknowledgement->sender, sender.c_str(), sender.size() );
 	OCTET_STRING_fromBuf ( &acknowledgement->recipient, recipient.c_str(), recipient.size() );
 	OCTET_STRING_fromBuf ( &acknowledgement->rapFileSequenceNumber, fileSequenceNumber.c_str(), fileSequenceNumber.size() );
@@ -1310,7 +1311,7 @@ long FillRAPAcknowledgement(Acknowledgement* acknowledgement, otl_nocommit_strea
 	return fileID;
 }
 //------------------------------
-template<class T>
+template<typename T>
 int EncodeAndUpload(string filename, string fileTypeDescr, asn_TYPE_descriptor_t* pASNTypeDescr, T* pASNStructure, Config& config, string roamingHubName)
 {
 	string fullFileName;
@@ -1326,7 +1327,7 @@ int EncodeAndUpload(string filename, string fileTypeDescr, asn_TYPE_descriptor_t
 		return TL_FILEERROR;
 	}
 	asn_enc_rval_t encodeRes = der_encode(pASNTypeDescr, pASNStructure, write_out, fTapFile);
-
+	
 	fclose(fTapFile);
 
 	if (encodeRes.encoded == -1) {
@@ -1415,7 +1416,6 @@ int main(int argc, const char* argv[])
 
 		otlFileStream << (long) OUTFILE_READY_FOR_SENDING; // status
 		while( ! otlFileStream.eof()) {
-
 			dataInterchange = (DataInterChange*)calloc(1, sizeof(DataInterChange));
 			if (!dataInterchange) {
 				log("", LOG_ERROR, "Failed to allocate memory for TAP DataInterChange structure. Exiting...");
@@ -1439,101 +1439,69 @@ int main(int argc, const char* argv[])
 			otlStream.flush();
 			otlStream.close();
 
-			// ENCODING FILE
-			string fullFileName;
-#ifdef WIN32
-			fullFileName = (config.GetOutputDirectory().empty() ? "." : config.GetOutputDirectory()) + "\\" + filename;
-#else
-			fullFileName = (config.GetOutputDirectory().empty() ? "." : config.GetOutputDirectory()) + "/" + filename;
-#endif
-
-			FILE *fTapFile=fopen( fullFileName.c_str(), "wb");
-			if(!fTapFile) {
-				log(filename, LOG_ERROR, string("Unable to open file ") + fullFileName + " for writing.");
-				Finalize(filename);
-				exit(TL_FILEERROR);
-			}
-			asn_enc_rval_t encodeRes = der_encode(&asn_DEF_DataInterChange, dataInterchange, write_out, fTapFile);
-	
-			fclose(fTapFile);
+			// ENCODING and Uploading 
+			int encodeAndUploadRes = EncodeAndUpload(filename, "TAP file", &asn_DEF_DataInterChange, dataInterchange, config, roamingHubName);
 			ASN_STRUCT_FREE(asn_DEF_DataInterChange, dataInterchange);
-			dataInterchange = NULL;
-	
-			if(encodeRes.encoded == -1) {
-				log(filename, LOG_ERROR, string("Error while encoding ASN file. Error code ") + string(encodeRes.failed_type ? encodeRes.failed_type->name : "unknown"));
-				Finalize(filename);
-				exit(TL_DECODEERROR);
-			}
 			
-			log(filename, LOG_INFO, "TAP File successfully created.");
-	
-			// Upload file to FTP-server
-			FtpSetting ftpSetting = config.GetFTPSetting(roamingHubName);
-			if (!ftpSetting.ftpServer.empty()) {
-				if (!UploadFileToFtp(filename, fullFileName, ftpSetting, roamingHubName)) {
-					Finalize(filename);
-					exit(TL_FILEERROR);
-				}
-			}
+			if (encodeAndUploadRes != TL_OK) 
+				otlConnect.rollback();
 			else
-				log(filename, LOG_INFO, "FTP server is not set in cfg-file for roaming hub " + roamingHubName + ". No uploading done.");
-
-			otlConnect.commit();
+				otlConnect.commit();
+				
 			otlLogConnect.commit();
 
-			}	// end of file loop
+		}	// end of file loop
 			
-			otlFileStream.close();
+		otlFileStream.close();
 
-			//--------------------------------
-			// Writing RAP acknowledgement files
-			//--------------------------------
-			otlFileStream.open( 1 /*stream buffer size in logical rows*/, 
-					"select f.FILE_ID /*long*/, BILLING.TAP3.GetOurTAPCode /*char[20],in*/, SENDER /*char[20],in*/,\
-						SEQUENCE_NUMBER /*char[10],in*/, FILE_TYPE_INDICATOR /* char[1] */, \
-						to_char(sysdate, 'yyyymmddhh24miss') /*char[20],in*/, BILLING.TAP3.GetOurUTCOffset/*char[10],in*/,\
-						h.NAME /*char[100]*/\
-					from BILLING.RAP_FILE f, BILLING.TMOBILENETWORK n, BILLING.TROAMINGHUB h \
-					where STATUS = :status /*long*/ and n.OBJECT_NO=f.MOBILENETWORK_ID and h.OBJECT_NO=n.ROAMINGHUB_ID", otlConnect);
+		//--------------------------------
+		// Writing RAP acknowledgement files
+		//--------------------------------
+		otlFileStream.open( 1 /*stream buffer size in logical rows*/, 
+				"select f.FILE_ID /*long*/, BILLING.TAP3.GetOurTAPCode /*char[20],in*/, SENDER /*char[20],in*/,\
+					SEQUENCE_NUMBER /*char[10],in*/, FILE_TYPE_INDICATOR /* char[1] */, \
+					to_char(sysdate, 'yyyymmddhh24miss') /*char[20],in*/, BILLING.TAP3.GetOurUTCOffset/*char[10],in*/,\
+					h.NAME /*char[100]*/\
+				from BILLING.RAP_FILE f, BILLING.TMOBILENETWORK n, BILLING.TROAMINGHUB h \
+				where STATUS = :status /*long*/ and n.OBJECT_NO=f.MOBILENETWORK_ID and h.OBJECT_NO=n.ROAMINGHUB_ID", otlConnect);
 			
-			otlFileStream << (long) INRAP_READY_TO_SEND_ACK; // status
-			while (!otlFileStream.eof()) {
-				Acknowledgement* acknowledgement = (Acknowledgement*) calloc(1, sizeof(Acknowledgement));
+		otlFileStream << (long) INRAP_READY_TO_SEND_ACK; // status
+		while (!otlFileStream.eof()) {
+			Acknowledgement* acknowledgement = (Acknowledgement*) calloc(1, sizeof(Acknowledgement));
 
-				if (!acknowledgement) {
-					log("", LOG_ERROR, "Failed to allocate memory for RAP Acknowledgement structure. Exiting...");
-					exit(TL_UNKNOWN);
-				}
-
-				long fileID;
-				string filename, roamingHubName, fileAvailableTimeStamp;
-				fileID = FillRAPAcknowledgement(acknowledgement, otlFileStream, filename, roamingHubName);
-			
-				// UPDATE STATUS and ACK_SENT in DB
-				otl_nocommit_stream otlStream;
-				otlStream.open( 1, // stream buffer size in logical rows
-					"UPDATE BILLING.RAP_FILE set status=:hStatus /*long*/, ack_sent=sysdate \
-						where file_id=:hFileId /*long*/", otlConnect ); 
-				otlStream 
-					<< (long) INRAP_ACK_SENT 
-					<< fileID;
-
-				otlStream.flush();
-				otlStream.close();
-
-				// ENCODING and Uploading 
-				int encodeAndUploadRes = EncodeAndUpload(filename, "RAP acknowledgement", &asn_DEF_Acknowledgement, acknowledgement, config, roamingHubName);
-				ASN_STRUCT_FREE(asn_DEF_Acknowledgement, acknowledgement);
-				acknowledgement = NULL;	
-
-				if (encodeAndUploadRes != TL_OK) 
-					otlConnect.rollback();
-				else
-					otlConnect.commit();
-				
-				otlLogConnect.commit();
-
+			if (!acknowledgement) {
+				log("", LOG_ERROR, "Failed to allocate memory for RAP acknowledgement structure. Exiting...");
+				exit(TL_UNKNOWN);
 			}
+
+			long fileID;
+			string filename, roamingHubName;
+			fileID = FillRAPAcknowledgement(acknowledgement, otlFileStream, filename, roamingHubName);
+			
+			// update status and ack_sent in db
+			otl_nocommit_stream otlStream;
+			otlStream.open( 1, // stream buffer size in logical rows
+				"update BILLING.RAP_FILE set status=:hstatus /*long*/, ack_sent=sysdate \
+					where file_id=:hfileid /*long*/", otlConnect ); 
+			otlStream 
+				<< (long) INRAP_ACK_SENT 
+				<< fileID;
+
+			otlStream.flush();
+			otlStream.close();
+
+			// encoding and uploading 
+			int encodeAndUploadRes = EncodeAndUpload(filename, "RAP acknowledgement", &asn_DEF_Acknowledgement, acknowledgement, config, roamingHubName);
+			ASN_STRUCT_FREE(asn_DEF_Acknowledgement, acknowledgement);
+			
+			if (encodeAndUploadRes != TL_OK) 
+				otlConnect.rollback();
+			else
+				otlConnect.commit();
+				
+			otlLogConnect.commit();
+
+		}
 	}
 	catch (otl_exception &otlEx) {
 		otlConnect.rollback();

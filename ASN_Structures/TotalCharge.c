@@ -98,7 +98,7 @@ TotalCharge_encode_xer(asn_TYPE_descriptor_t *td, void *structure,
 	return td->xer_encoder(td, structure, ilevel, flags, cb, app_key);
 }
 
-/*static*/ ber_tlv_tag_t asn_DEF_TotalCharge_tags_1[] = {
+static ber_tlv_tag_t asn_DEF_TotalCharge_tags_1[] = {
 	(ASN_TAG_CLASS_APPLICATION | (415 << 2)),
 	(ASN_TAG_CLASS_UNIVERSAL | (4 << 2))
 };
