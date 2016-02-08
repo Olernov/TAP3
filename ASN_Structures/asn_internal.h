@@ -36,7 +36,7 @@ int get_asn1c_environment_version(void);	/* Run-time version */
  * You may enable or override it.
  */
 
-//#define EMIT_ASN_DEBUG 1
+// #define EMIT_ASN_DEBUG 1
 
 #ifndef	ASN_DEBUG	/* If debugging code is not defined elsewhere... */
 #if	EMIT_ASN_DEBUG == 1	/* And it was asked to emit this code... */

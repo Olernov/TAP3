@@ -1233,7 +1233,6 @@ long FillDataIntercharge(DataInterChange* dataInterchange, otl_nocommit_stream& 
 		OctetString_new_fromInt64(dataInterchange->choice.transferBatch.auditControlInfo->totalDiscountValue, &asn_DEF_TotalDiscountValue, (long long) floor(totalDiscount * dblTAPPower + 0.5));
 		dataInterchange->choice.transferBatch.auditControlInfo->callEventDetailsCount = (CallEventDetailsCount_t*) calloc(1, sizeof(CallEventDetailsCount_t));
 		*dataInterchange->choice.transferBatch.auditControlInfo->callEventDetailsCount = eventCount;
-
 	}
 	else {
 		// creation NOTIFICATION (file having no call records)
@@ -1265,6 +1264,10 @@ long FillDataIntercharge(DataInterChange* dataInterchange, otl_nocommit_stream& 
 		if (fileTypeIndicator.length() > 0)
 			dataInterchange->choice.notification.fileTypeIndicator = OCTET_STRING_new_fromBuf(&asn_DEF_FileTypeIndicator, fileTypeIndicator.c_str(), fileTypeIndicator.size());
 	}
+
+	// DEBUG code, REMOVE
+	//OCTET_STRING_fromBuf( dataInterchange->choice.transferBatch.batchControlInfo->recipient, "RUSBD", 5);
+	//dataInterchange->choice.transferBatch.auditControlInfo->totalCharge->buf[0] = '1';
 
 	return fileID;
 }
@@ -1537,7 +1540,7 @@ int WriteTAPFiles(Config& config)
 				"EVENT_COUNT /* long */, TOTAL_CHARGE /* double */, TOTAL_TAX /* double */, TOTAL_DISCOUNT /* double */, FILE_TYPE_INDICATOR /* char[1] */, RAP_FILE_SEQNUM /* char[10]*/, "
 				"nvl(NOTIFICATION, 0) /*long*/, nvl(TAP_VERSION, 3) /*long*/, nvl(TAP_RELEASE, 12) /*long*/, nvl(TAP_DECIMAL_PLACES, 6) /*long*/, h.NAME /*char[100]*/ "
 			"from BILLING.TAP3_FILE f, BILLING.TMOBILENETWORK n, BILLING.TROAMINGHUB h "
-			"where STATUS = :status /*long*/ and SENDER=BILLING.TAP3.GetOurTAPCode and n.OBJECT_NO=f.MOBILENETWORK_ID and h.OBJECT_NO=f.ROAMINGHUB_ID", otlConnect);
+			"where STATUS = :status /*long*/ and SENDER=BILLING.TAP3.GetOurTAPCode(h.object_no) and n.OBJECT_NO=f.MOBILENETWORK_ID and h.OBJECT_NO=f.ROAMINGHUB_ID", otlConnect);
 
 		otlFileStream << (long) OUTFILE_READY_FOR_SENDING; // status
 		while (!otlFileStream.eof()) {
@@ -1607,7 +1610,7 @@ int WriteRAPFiles(Config& config)
 				"FILE_TYPE_INDICATOR /* char[1] */, ROAMING_PARTNER /*(char[20]*/, "
 				"nvl(RAP_VERSION, 1) /*long*/, nvl(RAP_RELEASE, 5) /*long*/, nvl(TAP_VERSION, 3) /*long*/, nvl(TAP_RELEASE, 12) /*long*/,h.NAME /*char[100]*/ "
 			"from BILLING.RAP_FILE f, BILLING.TMOBILENETWORK n, BILLING.TROAMINGHUB h "
-			"where STATUS = :status /*long*/ and SENDER=BILLING.TAP3.GetOurTAPCode and n.OBJECT_NO=f.MOBILENETWORK_ID and h.OBJECT_NO=f.ROAMINGHUB_ID", otlConnect);
+			"where STATUS = :status /*long*/ and SENDER=BILLING.TAP3.GetOurTAPCode(h.object_no) and n.OBJECT_NO=f.MOBILENETWORK_ID and h.OBJECT_NO=f.ROAMINGHUB_ID", otlConnect);
 
 		otlFileStream << (long) OUTFILE_READY_FOR_SENDING; // status
 		while (!otlFileStream.eof()) {
@@ -1673,7 +1676,7 @@ int WriteRAPAcknowledgements(Config& config)
 	try {
 		otl_nocommit_stream otlFileStream;
 		otlFileStream.open(1 /*stream buffer size in logical rows*/,
-			"select f.FILE_ID /*long*/, BILLING.TAP3.GetOurTAPCode /*char[20],in*/, SENDER /*char[20],in*/,"
+			"select f.FILE_ID /*long*/, BILLING.TAP3.GetOurTAPCode(h.object_no) /*char[20],in*/, SENDER /*char[20],in*/,"
 				"SEQUENCE_NUMBER /*char[10],in*/, FILE_TYPE_INDICATOR /* char[1] */, "
 				"to_char(sysdate, 'yyyymmddhh24miss') /*char[20],in*/, BILLING.TAP3.GetOurUTCOffset/*char[10],in*/,"
 				"h.NAME /*char[100]*/"
