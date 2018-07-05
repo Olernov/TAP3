@@ -9,79 +9,7 @@
 
 #include "TAP_Constants.h"
 #include "ConfigContainer.h"
-
-#define OTL_ORA9I // Compile OTL 4.0/OCI9i
-// #define OTL_ORA8
-// #define OTL_ORA8I
-
-#if defined(_MSC_VER) // VC++
-
-// Enabling support for 64-bit signed integers
-// Since 64-bit integers are not part of the ANSI C++
-// standard, this definition is compiler specific.
-#define OTL_BIGINT __int64
-
-// Defining a bigint constant that is larger than
-// the max 32-bit integer value.
-const OTL_BIGINT BIGINT_VAL1 = 12345678901234000;
-
-// Defining a string-to-bigint conversion 
-// that is used by OTL internally.
-// Since 64-bit ineteger conversion functions are
-// not part of the ANSI C++ standard, the code
-// below is compiler specific
-#define OTL_STR_TO_BIGINT(str,n)                \
-{                                               \
-  n=_atoi64(str);                               \
-}
-
-// Defining a bigint-to-string conversion 
-// that is used by OTL internally.
-// Since 64-bit ineteger conversion functions are
-// not part of the ANSI C++ standard, the code
-// below is compiler specific
-#define OTL_BIGINT_TO_STR(n,str)                \
-{                                               \
-  _i64toa(n,str,10);                            \
-}
-
-#elif defined(__GNUC__) // GNU C++
-
-#include <stdlib.h>
-
-// Enabling support for 64-bit signed integers
-// Since 64-bit integers are not part of the ANSI C++
-// standard, this definition is compiler specific.
-#define OTL_BIGINT long long
-
-const OTL_BIGINT BIGINT_VAL1=12345678901234000LL;
-
-// Defining a string-to-bigint conversion 
-// that is used by OTL internally.
-// Since 64-bit ineteger conversion functions are
-// not part of the ANSI C++ standard, the code
-// below is compiler specific.
-#define OTL_STR_TO_BIGINT(str,n)                \
-{                                               \
-  n=strtoll(str,0,10);                          \
-}
-
-// Defining a bigint-to-string conversion 
-// that is used by OTL internally.
-// Since 64-bit ineteger conversion functions are
-// not part of the ANSI C++ standard, the code
-// below is compiler specific
-#define OTL_BIGINT_TO_STR(n,str)                \
-{                                               \
-  sprintf(str,"%lld",n);                        \
-}
-
-
-#endif
-
-
-#define OTL_STL
-#include "otlv4.h"
+#include "OTL_Header.h"
 
 extern "C" int ncftp_main(int argc, char **argv, char* result);
 
@@ -586,7 +514,7 @@ int FillLocationInfo(GprsLocationInformation* pLocationInfo, string recEntity1, 
 }
 
 //-----------------------------
-int FillChargeInfo(long eventID, ChargeInformationList* pChargeInformationList)
+int FillChargeInfo(long long eventID, ChargeInformationList* pChargeInformationList)
 {
 	otl_nocommit_stream otlChrStream, otlChrDetStream;
 	double fixedDiscountValue = 0;
@@ -597,7 +525,7 @@ int FillChargeInfo(long eventID, ChargeInformationList* pChargeInformationList)
 	otlChrStream.open(1, "select CHARGE_ID /*long*/, CHR_ITEM /*char*/, nvl(EXCHANGE_RATE, -1) /*double*/,nvl(CT_LEVEL1,-1) /*long*/, nvl(CT_LEVEL2, -1) /*long*/, nvl(CT_LEVEL3, -1) /*long*/,"
 		"nvl(TAX_RATE,-1) /*double*/, nvl(TAX_VAL,-1) /*double*/, nvl(DISCOUNT_RATE,-1) /*double*/, nvl(FIXED_DISCOUNT_VALUE,-1) /*double*/ , nvl(DISCOUNT_VALUE,-1) /*double*/ "
 		"from BILLING.TAP3_CHARGEINFO "
-		"where EVENT_ID = :hEventId /*long*/", otlConnect);
+		"where EVENT_ID = :hEventId /*bigint*/", otlConnect);
 	otlChrStream << eventID;
 
 	while (!otlChrStream.eof()) {
@@ -716,7 +644,7 @@ int FillChargeInfo(long eventID, ChargeInformationList* pChargeInformationList)
 
 
 //--------------------------------------------------
-int FillBasicServiceUsed(long eventID, BasicServiceUsedList* pBSUList)
+int FillBasicServiceUsed(long long eventID, BasicServiceUsedList* pBSUList)
 {
 	otl_nocommit_stream otlStream, otlChrStream, otlChrDetStream;
 	long serviceID, serviceType, hsCSD;
@@ -724,7 +652,7 @@ int FillBasicServiceUsed(long eventID, BasicServiceUsedList* pBSUList)
 
 	otlStream.open(1, "select SERVICE_ID /*long*/, SERVICE_TYPE /*long*/,SERVICE_CODE /*char[10]*/, "
 		"to_char(CHR_TIME,'yyyymmddhh24miss') /*char[20]*/, CHR_UTCOFF /*char[10]*/, nvl(HSCSD,-1) /*long*/"
-		"from BILLING.TAP3_BASICSERVICE where EVENT_ID = :hEventId /*long*/", otlConnect);
+		"from BILLING.TAP3_BASICSERVICE where EVENT_ID = :hEventId /*bigint*/", otlConnect);
 
 	otlStream << eventID;
 
@@ -767,6 +695,49 @@ int FillBasicServiceUsed(long eventID, BasicServiceUsedList* pBSUList)
 	otlStream.close();
 	return 0;
 }
+
+//--------------------------------------------------
+int FillCamelServiceUsed(CamelServiceUsed** pCamelServiceUsed, long long eventID)
+{
+	otl_nocommit_stream otlStream;
+	long camelServiceKey = -1, camelServiceLevel = -1, defaultCallHandlingInd = -1;
+	string camelDestinationNumber;
+
+	otlStream.open(1, "select nvl(CAMEL_SERVICE_KEY,-1) /*long*/, nvl(CAMEL_SERVICE_LEVEL,-1) /*long*/, "
+		"nvl(DEFAULT_CALL_HANDLING_IND,-1) /*long*/, CAMEL_DESTINATION_NUMBER /*char[31]*/ "
+		"from BILLING.TAP3_CAMEL_SERVICE_USED where EVENT_ID = :hEventId /*bigint*/", otlConnect);
+
+	otlStream << eventID;
+	otlStream
+		>> camelServiceKey
+		>> camelServiceLevel
+		>> defaultCallHandlingInd
+		>> camelDestinationNumber;
+	if (camelServiceKey != -1 || camelServiceLevel != -1 || defaultCallHandlingInd != -1 ||
+			!camelDestinationNumber.empty()) {
+		*pCamelServiceUsed = (CamelServiceUsed*)calloc(1, sizeof(CamelServiceUsed));
+		if (camelServiceKey >= 0) {
+			(*pCamelServiceUsed)->camelServiceKey = (CamelServiceKey_t*)calloc(1, sizeof(CamelServiceKey_t));
+			*(*pCamelServiceUsed)->camelServiceKey = camelServiceKey;
+		}
+		if (camelServiceLevel >= 0) {
+			(*pCamelServiceUsed)->camelServiceLevel = (CamelServiceLevel_t*)calloc(1, sizeof(CamelServiceLevel_t));
+			*(*pCamelServiceUsed)->camelServiceLevel = camelServiceLevel;
+		}
+		if (defaultCallHandlingInd >= 0) {
+			(*pCamelServiceUsed)->defaultCallHandling = (DefaultCallHandlingIndicator_t*)calloc(1, sizeof(DefaultCallHandlingIndicator_t));
+			*(*pCamelServiceUsed)->defaultCallHandling = defaultCallHandlingInd;
+		}
+		if (!camelDestinationNumber.empty()) {
+			(*pCamelServiceUsed)->threeGcamelDestination = (ThreeGcamelDestination*)calloc(1, sizeof(ThreeGcamelDestination));
+			(*pCamelServiceUsed)->threeGcamelDestination->present = ThreeGcamelDestination_PR_camelDestinationNumber;
+			BCDStringFromStr(&((*pCamelServiceUsed)->threeGcamelDestination->choice.camelDestinationNumber), camelDestinationNumber);
+		}
+	}
+	otlStream.close();
+	return 0;
+}
+
 //-----------------------------
 void Finalize(string filename, bool bSuccess = false)
 {
@@ -919,7 +890,8 @@ long FillDataIntercharge(DataInterChange* dataInterchange, otl_nocommit_stream& 
 		dblTAPPower = pow((double) 10, tapDecimalPlaces);
 
 		// Processing calls
-		long eventID, RSN, origOrTerm, clir, duration, causeForTerm, locationArea, cellID, recEntityTypeCode, recEntity2TypeCode;
+		long long eventID;
+		long RSN, origOrTerm, clir, duration, causeForTerm, locationArea, cellID, recEntityTypeCode, recEntity2TypeCode;
 		OTL_BIGINT volumeIncoming, volumeOutgoing, chargingID;
 		string IMSI, MSISDN, partyNumber, dialledDigits, thirdParty, smsPartyNumber, callTime, callUTC, recEntity, recEntityType, recEntity2, recEntity2Type,
 			servingNetwork, IMEI, PDPAddress, APN_NI, APN_OI, PDPStartTime, PDPStartUTC, partialType;
@@ -928,7 +900,7 @@ long FillDataIntercharge(DataInterChange* dataInterchange, otl_nocommit_stream& 
 
 		otl_nocommit_stream otlStream;
 		otlStream.open(100, // stream buffer size in logical rows
-			"select EVENT_ID /*long*/, RSN /*long*/, ORIG_OR_TERM /*long*/, IMSI /*char*/, MSISDN /*char*/, PARTY_NUMBER /*char*/, DIALLED_DIGITS /*char*/, THIRD_PARTY /*char*/, "
+			"select EVENT_ID :#1<bigint>, RSN /*long*/, ORIG_OR_TERM /*long*/, IMSI /*charv*/, MSISDN /*char*/, PARTY_NUMBER /*char*/, DIALLED_DIGITS /*char*/, THIRD_PARTY /*char*/, "
 			"SMS_PARTYNUMBER /*char*/, nvl(CLIR, -1) /*long*/, to_char(CALL_TIME, 'yyyymmddhh24miss') /*char*/, "
 			"CALL_UTCOFF /*char*/, DURATION /*long*/, nvl(CAUSE_FOR_TERM, -1) /*long*/, REC_ENTITY /*char*/, REC_ENTITY_TYPE /*char*/, "
 			"decode(REC_ENTITY_TYPE, 'MSC', 1, 'SMSC', 2, 'GGSN/P-GW', 3, 'SGSN', 4, 'GMLC', 5, 'Wi-Fi', 6, 'P-GW', 7, 'S-GW', 8, 'P-CSCF', 9, 'TRF', 10, 'ATCF', 11, -1) REC_ENTITY_TYPE_CODE /*long*/, "
@@ -1013,7 +985,7 @@ long FillDataIntercharge(DataInterChange* dataInterchange, otl_nocommit_stream& 
 
 				callED->choice.mobileOriginatedCall.basicServiceUsedList = (BasicServiceUsedList*) calloc(1, sizeof(BasicServiceUsedList));
 				FillBasicServiceUsed(eventID, callED->choice.mobileOriginatedCall.basicServiceUsedList);
-
+				FillCamelServiceUsed(&callED->choice.mobileOriginatedCall.camelServiceUsed, eventID);
 				if (thirdParty.length() > 0 || clir != -1) {
 					callED->choice.mobileOriginatedCall.thirdPartyInformation = (ThirdPartyInformation*) calloc(1, sizeof(ThirdPartyInformation));
 					if (thirdParty.length() > 0)
@@ -1068,7 +1040,7 @@ long FillDataIntercharge(DataInterChange* dataInterchange, otl_nocommit_stream& 
 
 				callED->choice.mobileTerminatedCall.locationInformation = (LocationInformation*) calloc(1, sizeof(LocationInformation));
 				FillLocationInfo(callED->choice.mobileTerminatedCall.locationInformation, recEntity, recEntityTypeCode, locationArea, cellID, servingNetwork);
-
+				
 				if (IMEI.length() > 0) {
 					callED->choice.mobileTerminatedCall.equipmentIdentifier = (ImeiOrEsn*) calloc(1, sizeof(ImeiOrEsn));
 					callED->choice.mobileTerminatedCall.equipmentIdentifier->present = ImeiOrEsn_PR_imei;
@@ -1077,7 +1049,7 @@ long FillDataIntercharge(DataInterChange* dataInterchange, otl_nocommit_stream& 
 
 				callED->choice.mobileTerminatedCall.basicServiceUsedList = (BasicServiceUsedList*) calloc(1, sizeof(BasicServiceUsedList));
 				FillBasicServiceUsed(eventID, callED->choice.mobileTerminatedCall.basicServiceUsedList);
-
+				FillCamelServiceUsed(&callED->choice.mobileTerminatedCall.camelServiceUsed, eventID);
 				ASN_SEQUENCE_ADD(dataInterchange->choice.transferBatch.callEventDetails, callED);
 			}
 
@@ -1086,7 +1058,7 @@ long FillDataIntercharge(DataInterChange* dataInterchange, otl_nocommit_stream& 
 		otlStream.close();
 
 		otlStream.open(100, // stream buffer size in logical rows
-			"select EVENT_ID /*long*/, RSN /*long*/, IMSI /*char*/, MSISDN /*char*/, PDP_ADDRESS /*char*/, APN_NI /*char*/, APN_OI/*char*/, "
+			"select EVENT_ID /*bigint*/, RSN /*long*/, IMSI /*char*/, MSISDN /*char*/, PDP_ADDRESS /*char*/, APN_NI /*char*/, APN_OI/*char*/, "
 			"to_char(CALL_TIME, 'yyyymmddhh24miss') /*char*/, CALL_UTCOFF /*char*/, DURATION /*long*/, nvl(CAUSE_FOR_TERM, -1) /*long*/, "
 			"PARTIAL_TYPE /*char*/, to_char(PDP_START_TIME, 'yyyymmddhh24miss') /*char*/, PDP_START_UTCOFF /*char*/, nvl(CHARGING_ID, -1) :#15<bigint>,"
 			"REC_ENTITY /*char*/, REC_ENTITY_TYPE /*char*/, "
@@ -1768,8 +1740,8 @@ int main(int argc, const char* argv[])
 			exit(TL_FILEERROR);
 		}
 
-		// DB connect
-		otl_connect::otl_initialize();
+		const int OTL_MULTITHREADED_MODE = 1;
+		otl_connect::otl_initialize(OTL_MULTITHREADED_MODE);
 		try {
 			otlConnect.rlogon(config.GetConnectString().c_str());
 			otlLogConnect.rlogon(config.GetConnectString().c_str());
