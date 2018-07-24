@@ -1058,7 +1058,7 @@ long FillDataIntercharge(DataInterChange* dataInterchange, otl_nocommit_stream& 
 		otlStream.close();
 
 		otlStream.open(100, // stream buffer size in logical rows
-			"select EVENT_ID /*bigint*/, RSN /*long*/, IMSI /*char*/, MSISDN /*char*/, PDP_ADDRESS /*char*/, APN_NI /*char*/, APN_OI/*char*/, "
+			"select EVENT_ID :#1<bigint>, RSN /*long*/, IMSI /*char*/, MSISDN /*char*/, PDP_ADDRESS /*char*/, APN_NI /*char*/, APN_OI/*char*/, "
 			"to_char(CALL_TIME, 'yyyymmddhh24miss') /*char*/, CALL_UTCOFF /*char*/, DURATION /*long*/, nvl(CAUSE_FOR_TERM, -1) /*long*/, "
 			"PARTIAL_TYPE /*char*/, to_char(PDP_START_TIME, 'yyyymmddhh24miss') /*char*/, PDP_START_UTCOFF /*char*/, nvl(CHARGING_ID, -1) :#15<bigint>,"
 			"REC_ENTITY /*char*/, REC_ENTITY_TYPE /*char*/, "
