@@ -1,0 +1,2203 @@
+Decoding ReturnBatch as SEQUENCE
+ber_check_tags(ReturnBatch, size=1511, tm=0, step=0, tagno=0)
+Fetching tag from {008454A0,1511}: len 3, step 0, tagno 0 got [APPLICATION 534]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1507
+In ReturnBatch SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ReturnBatch SEQUENCE for element 0 (rapBatchControlInfoRap) is [APPLICATION 537] encoded in 3 bytes, of frame 1507
+Inside SEQUENCE ReturnBatch MF2
+Decoding RapBatchControlInfo as SEQUENCE
+ber_check_tags(RapBatchControlInfo, size=1507, tm=0, step=0, tagno=0)
+Fetching tag from {008454A4,1507}: len 3, step 0, tagno 0 got [APPLICATION 537]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1503
+In RapBatchControlInfo SEQUENCE left -1, edx=0 flags=0 opt=0 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 0 (sender) is [APPLICATION 196] encoded in 3 bytes, of frame 1503
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding Sender as OCTET STRING (frame 1503)
+ber_check_tags(Sender, size=1503, tm=0, step=0, tagno=0)
+Fetching tag from {008454A8,1503}: len 3, step 0, tagno 0 got [APPLICATION 196]
+Fetching len = 1
+Reallocating into 16
+Took 9 bytes to encode Sender: [CHECF]:5
+In RapBatchControlInfo SEQUENCE decoded 0 Sender of 1503 in 9 bytes rval.code 0, size=1503
+In RapBatchControlInfo SEQUENCE left -1, edx=1 flags=0 opt=0 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 1 (recipient) is [APPLICATION 182] encoded in 3 bytes, of frame 1494
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding Recipient as OCTET STRING (frame 1494)
+ber_check_tags(Recipient, size=1494, tm=0, step=0, tagno=0)
+Fetching tag from {008454B1,1494}: len 3, step 0, tagno 0 got [APPLICATION 182]
+Fetching len = 1
+Reallocating into 16
+Took 9 bytes to encode Recipient: [RUS27]:5
+In RapBatchControlInfo SEQUENCE decoded 1 Recipient of 1494 in 9 bytes rval.code 0, size=1494
+In RapBatchControlInfo SEQUENCE left -1, edx=2 flags=0 opt=0 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 2 (rapFileSequenceNumber) is [APPLICATION 181] encoded in 3 bytes, of frame 1485
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding RapFileSequenceNumber as OCTET STRING (frame 1485)
+ber_check_tags(RapFileSequenceNumber, size=1485, tm=0, step=0, tagno=0)
+Fetching tag from {008454BA,1485}: len 3, step 0, tagno 0 got [APPLICATION 181]
+Fetching len = 1
+Reallocating into 16
+Took 9 bytes to encode RapFileSequenceNumber: [00003]:5
+In RapBatchControlInfo SEQUENCE decoded 2 RapFileSequenceNumber of 1485 in 9 bytes rval.code 0, size=1485
+In RapBatchControlInfo SEQUENCE left -1, edx=3 flags=0 opt=0 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 3 (rapFileCreationTimeStamp) is [APPLICATION 526] encoded in 3 bytes, of frame 1476
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding RapFileCreationTimeStamp as SEQUENCE
+ber_check_tags(RapFileCreationTimeStamp, size=1476, tm=0, step=0, tagno=0)
+Fetching tag from {008454C3,1476}: len 3, step 0, tagno 0 got [APPLICATION 526]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1472
+In RapFileCreationTimeStamp SEQUENCE left -1, edx=0 flags=1 opt=2 ec=2
+Current tag in RapFileCreationTimeStamp SEQUENCE for element 0 (localTimeStamp) is [APPLICATION 16] encoded in 1 bytes, of frame 1472
+Inside SEQUENCE RapFileCreationTimeStamp MF2
+Decoding LocalTimeStamp as OCTET STRING (frame 1472)
+ber_check_tags(LocalTimeStamp, size=1472, tm=0, step=0, tagno=0)
+Fetching tag from {008454C7,1472}: len 1, step 0, tagno 0 got [APPLICATION 16]
+Fetching len = 1
+Reallocating into 16
+Took 16 bytes to encode LocalTimeStamp: [20150622120428]:14
+In RapFileCreationTimeStamp SEQUENCE decoded 0 LocalTimeStamp of 1472 in 16 bytes rval.code 0, size=1472
+In RapFileCreationTimeStamp SEQUENCE left -1, edx=1 flags=1 opt=1 ec=2
+Current tag in RapFileCreationTimeStamp SEQUENCE for element 1 (utcTimeOffset) is [APPLICATION 231] encoded in 3 bytes, of frame 1456
+Inside SEQUENCE RapFileCreationTimeStamp MF2
+Decoding UtcTimeOffset as OCTET STRING (frame 1456)
+ber_check_tags(UtcTimeOffset, size=1456, tm=0, step=0, tagno=0)
+Fetching tag from {008454D7,1456}: len 3, step 0, tagno 0 got [APPLICATION 231]
+Fetching len = 1
+Reallocating into 16
+Took 9 bytes to encode UtcTimeOffset: [+0200]:5
+In RapFileCreationTimeStamp SEQUENCE decoded 1 UtcTimeOffset of 1456 in 9 bytes rval.code 0, size=1456
+SEQUENCE RapFileCreationTimeStamp Leftover: -1, size = 1447
+In RapBatchControlInfo SEQUENCE decoded 3 RapFileCreationTimeStamp of 1476 in 31 bytes rval.code 0, size=1476
+In RapBatchControlInfo SEQUENCE left -1, edx=4 flags=0 opt=0 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 4 (rapFileAvailableTimeStamp) is [APPLICATION 525] encoded in 3 bytes, of frame 1445
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding RapFileAvailableTimeStamp as SEQUENCE
+ber_check_tags(RapFileAvailableTimeStamp, size=1445, tm=0, step=0, tagno=0)
+Fetching tag from {008454E2,1445}: len 3, step 0, tagno 0 got [APPLICATION 525]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1441
+In RapFileAvailableTimeStamp SEQUENCE left -1, edx=0 flags=1 opt=2 ec=2
+Current tag in RapFileAvailableTimeStamp SEQUENCE for element 0 (localTimeStamp) is [APPLICATION 16] encoded in 1 bytes, of frame 1441
+Inside SEQUENCE RapFileAvailableTimeStamp MF2
+Decoding LocalTimeStamp as OCTET STRING (frame 1441)
+ber_check_tags(LocalTimeStamp, size=1441, tm=0, step=0, tagno=0)
+Fetching tag from {008454E6,1441}: len 1, step 0, tagno 0 got [APPLICATION 16]
+Fetching len = 1
+Reallocating into 16
+Took 16 bytes to encode LocalTimeStamp: [20150622120428]:14
+In RapFileAvailableTimeStamp SEQUENCE decoded 0 LocalTimeStamp of 1441 in 16 bytes rval.code 0, size=1441
+In RapFileAvailableTimeStamp SEQUENCE left -1, edx=1 flags=1 opt=1 ec=2
+Current tag in RapFileAvailableTimeStamp SEQUENCE for element 1 (utcTimeOffset) is [APPLICATION 231] encoded in 3 bytes, of frame 1425
+Inside SEQUENCE RapFileAvailableTimeStamp MF2
+Decoding UtcTimeOffset as OCTET STRING (frame 1425)
+ber_check_tags(UtcTimeOffset, size=1425, tm=0, step=0, tagno=0)
+Fetching tag from {008454F6,1425}: len 3, step 0, tagno 0 got [APPLICATION 231]
+Fetching len = 1
+Reallocating into 16
+Took 9 bytes to encode UtcTimeOffset: [+0200]:5
+In RapFileAvailableTimeStamp SEQUENCE decoded 1 UtcTimeOffset of 1425 in 9 bytes rval.code 0, size=1425
+SEQUENCE RapFileAvailableTimeStamp Leftover: -1, size = 1416
+In RapBatchControlInfo SEQUENCE decoded 4 RapFileAvailableTimeStamp of 1445 in 31 bytes rval.code 0, size=1445
+In RapBatchControlInfo SEQUENCE left -1, edx=5 flags=1 opt=2 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 5 (specificationVersionNumber) is [APPLICATION 201] encoded in 3 bytes, of frame 1414
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding SpecificationVersionNumber as INTEGER (tm=0)
+ber_check_tags(SpecificationVersionNumber, size=1414, tm=0, step=0, tagno=0)
+Fetching tag from {00845501,1414}: len 3, step 0, tagno 0 got [APPLICATION 201]
+Fetching len = 1
+SpecificationVersionNumber length is 1 bytes
+Took 5/1 bytes to encode SpecificationVersionNumber (3)
+In RapBatchControlInfo SEQUENCE decoded 5 SpecificationVersionNumber of 1414 in 5 bytes rval.code 0, size=1414
+In RapBatchControlInfo SEQUENCE left -1, edx=6 flags=1 opt=1 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 6 (releaseVersionNumber) is [APPLICATION 189] encoded in 3 bytes, of frame 1409
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding ReleaseVersionNumber as INTEGER (tm=0)
+ber_check_tags(ReleaseVersionNumber, size=1409, tm=0, step=0, tagno=0)
+Fetching tag from {00845506,1409}: len 3, step 0, tagno 0 got [APPLICATION 189]
+Fetching len = 1
+ReleaseVersionNumber length is 1 bytes
+Took 5/1 bytes to encode ReleaseVersionNumber (12)
+In RapBatchControlInfo SEQUENCE decoded 6 ReleaseVersionNumber of 1409 in 5 bytes rval.code 0, size=1409
+In RapBatchControlInfo SEQUENCE left -1, edx=7 flags=0 opt=0 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 7 (rapSpecificationVersionNumber) is [APPLICATION 544] encoded in 3 bytes, of frame 1404
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding RapSpecificationVersionNumber as INTEGER (tm=0)
+ber_check_tags(RapSpecificationVersionNumber, size=1404, tm=0, step=0, tagno=0)
+Fetching tag from {0084550B,1404}: len 3, step 0, tagno 0 got [APPLICATION 544]
+Fetching len = 1
+RapSpecificationVersionNumber length is 1 bytes
+Took 5/1 bytes to encode RapSpecificationVersionNumber (1)
+In RapBatchControlInfo SEQUENCE decoded 7 RapSpecificationVersionNumber of 1404 in 5 bytes rval.code 0, size=1404
+In RapBatchControlInfo SEQUENCE left -1, edx=8 flags=0 opt=0 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 8 (rapReleaseVersionNumber) is [APPLICATION 543] encoded in 3 bytes, of frame 1399
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding RapReleaseVersionNumber as INTEGER (tm=0)
+ber_check_tags(RapReleaseVersionNumber, size=1399, tm=0, step=0, tagno=0)
+Fetching tag from {00845510,1399}: len 3, step 0, tagno 0 got [APPLICATION 543]
+Fetching len = 1
+RapReleaseVersionNumber length is 1 bytes
+Took 5/1 bytes to encode RapReleaseVersionNumber (5)
+In RapBatchControlInfo SEQUENCE decoded 8 RapReleaseVersionNumber of 1399 in 5 bytes rval.code 0, size=1399
+In RapBatchControlInfo SEQUENCE left -1, edx=9 flags=1 opt=5 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 9 (fileTypeIndicator) is [APPLICATION 550] encoded in 3 bytes, of frame 1394
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding RoamingPartner as OCTET STRING (frame 1394)
+ber_check_tags(RoamingPartner, size=1394, tm=0, step=0, tagno=0)
+Fetching tag from {00845515,1394}: len 3, step 0, tagno 0 got [APPLICATION 550]
+Fetching len = 1
+Reallocating into 16
+Took 9 bytes to encode RoamingPartner: [ESTK8]:5
+In RapBatchControlInfo SEQUENCE decoded 10 RoamingPartner of 1394 in 9 bytes rval.code 0, size=1394
+In RapBatchControlInfo SEQUENCE left -1, edx=11 flags=1 opt=3 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 11 (operatorSpecList) is [APPLICATION 244] encoded in 3 bytes, of frame 1385
+Inside SEQUENCE RapBatchControlInfo MF2
+Decoding TapDecimalPlaces as INTEGER (tm=0)
+ber_check_tags(TapDecimalPlaces, size=1385, tm=0, step=0, tagno=0)
+Fetching tag from {0084551E,1385}: len 3, step 0, tagno 0 got [APPLICATION 244]
+Fetching len = 1
+TapDecimalPlaces length is 1 bytes
+Took 5/1 bytes to encode TapDecimalPlaces (6)
+In RapBatchControlInfo SEQUENCE decoded 12 TapDecimalPlaces of 1385 in 5 bytes rval.code 0, size=1385
+In RapBatchControlInfo SEQUENCE left -1, edx=13 flags=1 opt=1 ec=14
+Current tag in RapBatchControlInfo SEQUENCE for element 13 (tapCurrency) is [UNIVERSAL 0] encoded in 1 bytes, of frame 1380
+edx = 13, opt = 1, ec=14
+SEQUENCE RapBatchControlInfo Leftover: -1, size = 1380
+In ReturnBatch SEQUENCE decoded 0 RapBatchControlInfo of 1507 in 129 bytes rval.code 0, size=1507
+In ReturnBatch SEQUENCE left -1, edx=1 flags=0 opt=0 ec=3
+Current tag in ReturnBatch SEQUENCE for element 1 (returnDetails) is [APPLICATION 536] encoded in 3 bytes, of frame 1378
+Inside SEQUENCE ReturnBatch MF2
+Decoding ReturnDetailList as SET OF
+ber_check_tags(ReturnDetailList, size=1378, tm=0, step=0, tagno=0)
+Fetching tag from {00845525,1378}: len 3, step 0, tagno 0 got [APPLICATION 536]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1374
+Decoding ReturnDetail as CHOICE
+Structure consumes -1 bytes, buffer 1374
+In ReturnDetail CHOICE tag length 3
+Decoding SevereReturn as SEQUENCE
+ber_check_tags(SevereReturn, size=1374, tm=0, step=0, tagno=0)
+Fetching tag from {00845529,1374}: len 3, step 0, tagno 0 got [APPLICATION 540]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1370
+In SevereReturn SEQUENCE left -1, edx=0 flags=0 opt=0 ec=4
+Current tag in SevereReturn SEQUENCE for element 0 (fileSequenceNumber) is [APPLICATION 109] encoded in 2 bytes, of frame 1370
+Inside SEQUENCE SevereReturn MF2
+Decoding FileSequenceNumber as OCTET STRING (frame 1370)
+ber_check_tags(FileSequenceNumber, size=1370, tm=0, step=0, tagno=0)
+Fetching tag from {0084552D,1370}: len 2, step 0, tagno 0 got [APPLICATION 109]
+Fetching len = 1
+Reallocating into 16
+Took 8 bytes to encode FileSequenceNumber: [00020]:5
+In SevereReturn SEQUENCE decoded 0 FileSequenceNumber of 1370 in 8 bytes rval.code 0, size=1370
+In SevereReturn SEQUENCE left -1, edx=1 flags=0 opt=0 ec=4
+Current tag in SevereReturn SEQUENCE for element 1 (callEventDetail) is [APPLICATION 9] encoded in 1 bytes, of frame 1362
+Inside SEQUENCE SevereReturn MF2
+Decoding CallEventDetail as CHOICE
+Structure consumes -1 bytes, buffer 1362
+In CallEventDetail CHOICE tag length 1
+Decoding MobileOriginatedCall as SEQUENCE
+ber_check_tags(MobileOriginatedCall, size=1362, tm=0, step=0, tagno=0)
+Fetching tag from {00845535,1362}: len 1, step 0, tagno 0 got [APPLICATION 9]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1360
+In MobileOriginatedCall SEQUENCE left -1, edx=0 flags=1 opt=8 ec=8
+Current tag in MobileOriginatedCall SEQUENCE for element 0 (basicCallInformation) is [APPLICATION 147] encoded in 3 bytes, of frame 1360
+Inside SEQUENCE MobileOriginatedCall MF2
+Decoding MoBasicCallInformation as SEQUENCE
+ber_check_tags(MoBasicCallInformation, size=1360, tm=0, step=0, tagno=0)
+Fetching tag from {00845537,1360}: len 3, step 0, tagno 0 got [APPLICATION 147]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1356
+In MoBasicCallInformation SEQUENCE left -1, edx=0 flags=1 opt=8 ec=8
+Current tag in MoBasicCallInformation SEQUENCE for element 0 (chargeableSubscriber) is [APPLICATION 427] encoded in 3 bytes, of frame 1356
+Inside SEQUENCE MoBasicCallInformation MF2
+Decoding ChargeableSubscriber as CHOICE
+ber_check_tags(ChargeableSubscriber, size=1356, tm=0, step=0, tagno=0)
+Fetching tag from {0084553B,1356}: len 3, step 0, tagno 0 got [APPLICATION 427]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1352
+In ChargeableSubscriber CHOICE tag length 3
+Decoding SimChargeableSubscriber as SEQUENCE
+ber_check_tags(SimChargeableSubscriber, size=1352, tm=0, step=0, tagno=0)
+Fetching tag from {0084553F,1352}: len 3, step 0, tagno 0 got [APPLICATION 199]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1348
+In SimChargeableSubscriber SEQUENCE left -1, edx=0 flags=1 opt=2 ec=2
+Current tag in SimChargeableSubscriber SEQUENCE for element 0 (imsi) is [APPLICATION 129] encoded in 3 bytes, of frame 1348
+Inside SEQUENCE SimChargeableSubscriber MF2
+Decoding Imsi as OCTET STRING (frame 1348)
+ber_check_tags(Imsi, size=1348, tm=0, step=0, tagno=0)
+Fetching tag from {00845543,1348}: len 3, step 0, tagno 0 got [APPLICATION 129]
+Fetching len = 1
+Reallocating into 16
+Took 12 bytes to encode Imsi: [$Ä"IH]:8
+In SimChargeableSubscriber SEQUENCE decoded 0 Imsi of 1348 in 12 bytes rval.code 0, size=1348
+In SimChargeableSubscriber SEQUENCE left -1, edx=1 flags=1 opt=1 ec=2
+Current tag in SimChargeableSubscriber SEQUENCE for element 1 (msisdn) is [APPLICATION 152] encoded in 3 bytes, of frame 1336
+Inside SEQUENCE SimChargeableSubscriber MF2
+Decoding Msisdn as OCTET STRING (frame 1336)
+ber_check_tags(Msisdn, size=1336, tm=0, step=0, tagno=0)
+Fetching tag from {0084554F,1336}: len 3, step 0, tagno 0 got [APPLICATION 152]
+Fetching len = 1
+Reallocating into 16
+Took 10 bytes to encode Msisdn: [7%hêb/]:6
+In SimChargeableSubscriber SEQUENCE decoded 1 Msisdn of 1336 in 10 bytes rval.code 0, size=1336
+SEQUENCE SimChargeableSubscriber Leftover: -1, size = 1326
+CHOICE ChargeableSubscriber Leftover: -1, size = 1324, tm=0, tc=1
+In MoBasicCallInformation SEQUENCE decoded 0 ChargeableSubscriber of 1356 in 34 bytes rval.code 0, size=1356
+In MoBasicCallInformation SEQUENCE left -1, edx=1 flags=1 opt=7 ec=8
+Current tag in MoBasicCallInformation SEQUENCE for element 1 (rapFileSequenceNumber) is [APPLICATION 89] encoded in 2 bytes, of frame 1322
+Inside SEQUENCE MoBasicCallInformation MF2
+Decoding Destination as SEQUENCE
+ber_check_tags(Destination, size=1322, tm=0, step=0, tagno=0)
+Fetching tag from {0084555D,1322}: len 2, step 0, tagno 0 got [APPLICATION 89]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1319
+In Destination SEQUENCE left -1, edx=0 flags=1 opt=5 ec=5
+Current tag in Destination SEQUENCE for element 0 (calledNumber) is [APPLICATION 279] encoded in 3 bytes, of frame 1319
+Inside SEQUENCE Destination MF2
+Decoding DialledDigits as OCTET STRING (frame 1319)
+ber_check_tags(DialledDigits, size=1319, tm=0, step=0, tagno=0)
+Fetching tag from {00845560,1319}: len 3, step 0, tagno 0 got [APPLICATION 279]
+Fetching len = 1
+Reallocating into 16
+Took 16 bytes to encode DialledDigits: [+37256178653]:12
+In Destination SEQUENCE decoded 1 DialledDigits of 1319 in 16 bytes rval.code 0, size=1319
+In Destination SEQUENCE left -1, edx=2 flags=1 opt=3 ec=5
+Current tag in Destination SEQUENCE for element 2 (calledPlace) is [UNIVERSAL 0] encoded in 1 bytes, of frame 1303
+edx = 2, opt = 3, ec=5
+SEQUENCE Destination Leftover: -1, size = 1303
+In MoBasicCallInformation SEQUENCE decoded 2 Destination of 1322 in 21 bytes rval.code 0, size=1322
+In MoBasicCallInformation SEQUENCE left -1, edx=3 flags=1 opt=5 ec=8
+Current tag in MoBasicCallInformation SEQUENCE for element 3 (destinationNetwork) is [APPLICATION 44] encoded in 2 bytes, of frame 1301
+Inside SEQUENCE MoBasicCallInformation MF2
+Decoding CallEventStartTimeStamp as SEQUENCE
+ber_check_tags(CallEventStartTimeStamp, size=1301, tm=0, step=0, tagno=0)
+Fetching tag from {00845572,1301}: len 2, step 0, tagno 0 got [APPLICATION 44]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1298
+In CallEventStartTimeStamp SEQUENCE left -1, edx=0 flags=1 opt=2 ec=2
+Current tag in CallEventStartTimeStamp SEQUENCE for element 0 (localTimeStamp) is [APPLICATION 16] encoded in 1 bytes, of frame 1298
+Inside SEQUENCE CallEventStartTimeStamp MF2
+Decoding LocalTimeStamp as OCTET STRING (frame 1298)
+ber_check_tags(LocalTimeStamp, size=1298, tm=0, step=0, tagno=0)
+Fetching tag from {00845575,1298}: len 1, step 0, tagno 0 got [APPLICATION 16]
+Fetching len = 1
+Reallocating into 16
+Took 16 bytes to encode LocalTimeStamp: [20150621103931]:14
+In CallEventStartTimeStamp SEQUENCE decoded 0 LocalTimeStamp of 1298 in 16 bytes rval.code 0, size=1298
+In CallEventStartTimeStamp SEQUENCE left -1, edx=1 flags=1 opt=1 ec=2
+Current tag in CallEventStartTimeStamp SEQUENCE for element 1 (utcTimeOffsetCode) is [APPLICATION 232] encoded in 3 bytes, of frame 1282
+Inside SEQUENCE CallEventStartTimeStamp MF2
+Decoding UtcTimeOffsetCode as INTEGER (tm=0)
+ber_check_tags(UtcTimeOffsetCode, size=1282, tm=0, step=0, tagno=0)
+Fetching tag from {00845585,1282}: len 3, step 0, tagno 0 got [APPLICATION 232]
+Fetching len = 1
+UtcTimeOffsetCode length is 1 bytes
+Took 5/1 bytes to encode UtcTimeOffsetCode (1)
+In CallEventStartTimeStamp SEQUENCE decoded 1 UtcTimeOffsetCode of 1282 in 5 bytes rval.code 0, size=1282
+SEQUENCE CallEventStartTimeStamp Leftover: -1, size = 1277
+In MoBasicCallInformation SEQUENCE decoded 4 CallEventStartTimeStamp of 1301 in 26 bytes rval.code 0, size=1301
+In MoBasicCallInformation SEQUENCE left -1, edx=5 flags=1 opt=3 ec=8
+Current tag in MoBasicCallInformation SEQUENCE for element 5 (totalCallEventDuration) is [APPLICATION 223] encoded in 3 bytes, of frame 1275
+Inside SEQUENCE MoBasicCallInformation MF2
+Decoding TotalCallEventDuration as INTEGER (tm=0)
+ber_check_tags(TotalCallEventDuration, size=1275, tm=0, step=0, tagno=0)
+Fetching tag from {0084558C,1275}: len 3, step 0, tagno 0 got [APPLICATION 223]
+Fetching len = 1
+TotalCallEventDuration length is 2 bytes
+Took 6/2 bytes to encode TotalCallEventDuration (178)
+In MoBasicCallInformation SEQUENCE decoded 5 TotalCallEventDuration of 1275 in 6 bytes rval.code 0, size=1275
+In MoBasicCallInformation SEQUENCE left -1, edx=6 flags=1 opt=2 ec=8
+Current tag in MoBasicCallInformation SEQUENCE for element 6 (simToolkitIndicator) is [UNIVERSAL 0] encoded in 1 bytes, of frame 1269
+edx = 6, opt = 2, ec=8
+SEQUENCE MoBasicCallInformation Leftover: -1, size = 1269
+In MobileOriginatedCall SEQUENCE decoded 0 MoBasicCallInformation of 1360 in 93 bytes rval.code 0, size=1360
+In MobileOriginatedCall SEQUENCE left -1, edx=1 flags=1 opt=7 ec=8
+Current tag in MobileOriginatedCall SEQUENCE for element 1 (locationInformation) is [APPLICATION 138] encoded in 3 bytes, of frame 1267
+Inside SEQUENCE MobileOriginatedCall MF2
+Decoding LocationInformation as SEQUENCE
+ber_check_tags(LocationInformation, size=1267, tm=0, step=0, tagno=0)
+Fetching tag from {00845594,1267}: len 3, step 0, tagno 0 got [APPLICATION 138]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1263
+In LocationInformation SEQUENCE left -1, edx=0 flags=1 opt=3 ec=3
+Current tag in LocationInformation SEQUENCE for element 0 (networkLocation) is [APPLICATION 156] encoded in 3 bytes, of frame 1263
+Inside SEQUENCE LocationInformation MF2
+Decoding NetworkLocation as SEQUENCE
+ber_check_tags(NetworkLocation, size=1263, tm=0, step=0, tagno=0)
+Fetching tag from {00845598,1263}: len 3, step 0, tagno 0 got [APPLICATION 156]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1259
+In NetworkLocation SEQUENCE left -1, edx=0 flags=1 opt=4 ec=4
+Current tag in NetworkLocation SEQUENCE for element 0 (recEntityCode) is [APPLICATION 184] encoded in 3 bytes, of frame 1259
+Inside SEQUENCE NetworkLocation MF2
+Decoding RecEntityCode as INTEGER (tm=0)
+ber_check_tags(RecEntityCode, size=1259, tm=0, step=0, tagno=0)
+Fetching tag from {0084559C,1259}: len 3, step 0, tagno 0 got [APPLICATION 184]
+Fetching len = 1
+RecEntityCode length is 1 bytes
+Took 5/1 bytes to encode RecEntityCode (1)
+In NetworkLocation SEQUENCE decoded 0 RecEntityCode of 1259 in 5 bytes rval.code 0, size=1259
+In NetworkLocation SEQUENCE left -1, edx=1 flags=1 opt=3 ec=4
+Current tag in NetworkLocation SEQUENCE for element 1 (callReference) is [APPLICATION 136] encoded in 3 bytes, of frame 1254
+Inside SEQUENCE NetworkLocation MF2
+Decoding LocationArea as INTEGER (tm=0)
+ber_check_tags(LocationArea, size=1254, tm=0, step=0, tagno=0)
+Fetching tag from {008455A1,1254}: len 3, step 0, tagno 0 got [APPLICATION 136]
+Fetching len = 1
+LocationArea length is 3 bytes
+Took 7/3 bytes to encode LocationArea (51200)
+In NetworkLocation SEQUENCE decoded 2 LocationArea of 1254 in 7 bytes rval.code 0, size=1254
+In NetworkLocation SEQUENCE left -1, edx=3 flags=1 opt=1 ec=4
+Current tag in NetworkLocation SEQUENCE for element 3 (cellId) is [APPLICATION 59] encoded in 2 bytes, of frame 1247
+Inside SEQUENCE NetworkLocation MF2
+Decoding CellId as INTEGER (tm=0)
+ber_check_tags(CellId, size=1247, tm=0, step=0, tagno=0)
+Fetching tag from {008455A8,1247}: len 2, step 0, tagno 0 got [APPLICATION 59]
+Fetching len = 1
+CellId length is 2 bytes
+Took 5/2 bytes to encode CellId (17961)
+In NetworkLocation SEQUENCE decoded 3 CellId of 1247 in 5 bytes rval.code 0, size=1247
+SEQUENCE NetworkLocation Leftover: -1, size = 1242
+In LocationInformation SEQUENCE decoded 0 NetworkLocation of 1263 in 23 bytes rval.code 0, size=1263
+In LocationInformation SEQUENCE left -1, edx=1 flags=1 opt=2 ec=3
+Current tag in LocationInformation SEQUENCE for element 1 (homeLocationInformation) is [UNIVERSAL 0] encoded in 1 bytes, of frame 1240
+edx = 1, opt = 2, ec=3
+SEQUENCE LocationInformation Leftover: -1, size = 1240
+In MobileOriginatedCall SEQUENCE decoded 1 LocationInformation of 1267 in 29 bytes rval.code 0, size=1267
+In MobileOriginatedCall SEQUENCE left -1, edx=2 flags=1 opt=6 ec=8
+Current tag in MobileOriginatedCall SEQUENCE for element 2 (equipmentIdentifier) is [APPLICATION 429] encoded in 3 bytes, of frame 1238
+Inside SEQUENCE MobileOriginatedCall MF2
+Decoding ImeiOrEsn as CHOICE
+ber_check_tags(ImeiOrEsn, size=1238, tm=0, step=0, tagno=0)
+Fetching tag from {008455B1,1238}: len 3, step 0, tagno 0 got [APPLICATION 429]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1234
+In ImeiOrEsn CHOICE tag length 3
+Decoding Imei as OCTET STRING (frame 1234)
+ber_check_tags(Imei, size=1234, tm=0, step=0, tagno=0)
+Fetching tag from {008455B5,1234}: len 3, step 0, tagno 0 got [APPLICATION 128]
+Fetching len = 1
+Reallocating into 16
+Took 12 bytes to encode Imei: [5QY9î]:8
+CHOICE ImeiOrEsn Leftover: -1, size = 1222, tm=0, tc=1
+In MobileOriginatedCall SEQUENCE decoded 2 ImeiOrEsn of 1238 in 18 bytes rval.code 0, size=1238
+In MobileOriginatedCall SEQUENCE left -1, edx=3 flags=1 opt=5 ec=8
+Current tag in MobileOriginatedCall SEQUENCE for element 3 (basicServiceUsedList) is [APPLICATION 38] encoded in 2 bytes, of frame 1220
+Inside SEQUENCE MobileOriginatedCall MF2
+Decoding BasicServiceUsedList as SET OF
+ber_check_tags(BasicServiceUsedList, size=1220, tm=0, step=0, tagno=0)
+Fetching tag from {008455C3,1220}: len 2, step 0, tagno 0 got [APPLICATION 38]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1217
+Decoding BasicServiceUsed as SEQUENCE
+ber_check_tags(BasicServiceUsed, size=1217, tm=0, step=0, tagno=0)
+Fetching tag from {008455C6,1217}: len 2, step 0, tagno 0 got [APPLICATION 39]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1214
+In BasicServiceUsed SEQUENCE left -1, edx=0 flags=1 opt=4 ec=4
+Current tag in BasicServiceUsed SEQUENCE for element 0 (basicService) is [APPLICATION 36] encoded in 2 bytes, of frame 1214
+Inside SEQUENCE BasicServiceUsed MF2
+Decoding BasicService as SEQUENCE
+ber_check_tags(BasicService, size=1214, tm=0, step=0, tagno=0)
+Fetching tag from {008455C9,1214}: len 2, step 0, tagno 0 got [APPLICATION 36]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1211
+In BasicService SEQUENCE left -1, edx=0 flags=1 opt=6 ec=6
+Current tag in BasicService SEQUENCE for element 0 (serviceCode) is [APPLICATION 426] encoded in 3 bytes, of frame 1211
+Inside SEQUENCE BasicService MF2
+Decoding BasicServiceCode as CHOICE
+ber_check_tags(BasicServiceCode, size=1211, tm=0, step=0, tagno=0)
+Fetching tag from {008455CC,1211}: len 3, step 0, tagno 0 got [APPLICATION 426]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1207
+In BasicServiceCode CHOICE tag length 3
+Decoding TeleServiceCode as OCTET STRING (frame 1207)
+ber_check_tags(TeleServiceCode, size=1207, tm=0, step=0, tagno=0)
+Fetching tag from {008455D0,1207}: len 3, step 0, tagno 0 got [APPLICATION 218]
+Fetching len = 1
+Reallocating into 16
+Took 6 bytes to encode TeleServiceCode: [11]:2
+CHOICE BasicServiceCode Leftover: -1, size = 1201, tm=0, tc=1
+In BasicService SEQUENCE decoded 0 BasicServiceCode of 1211 in 12 bytes rval.code 0, size=1211
+In BasicService SEQUENCE left -1, edx=1 flags=1 opt=5 ec=6
+Current tag in BasicService SEQUENCE for element 1 (transparencyIndicator) is [UNIVERSAL 0] encoded in 1 bytes, of frame 1199
+edx = 1, opt = 5, ec=6
+SEQUENCE BasicService Leftover: -1, size = 1199
+In BasicServiceUsed SEQUENCE decoded 0 BasicService of 1214 in 17 bytes rval.code 0, size=1214
+In BasicServiceUsed SEQUENCE left -1, edx=1 flags=1 opt=3 ec=4
+Current tag in BasicServiceUsed SEQUENCE for element 1 (chargingTimeStamp) is [APPLICATION 70] encoded in 2 bytes, of frame 1197
+Inside SEQUENCE BasicServiceUsed MF2
+Decoding ChargeInformationList as SET OF
+ber_check_tags(ChargeInformationList, size=1197, tm=0, step=0, tagno=0)
+Fetching tag from {008455DA,1197}: len 2, step 0, tagno 0 got [APPLICATION 70]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1194
+Decoding ChargeInformation as SEQUENCE
+ber_check_tags(ChargeInformation, size=1194, tm=0, step=0, tagno=0)
+Fetching tag from {008455DD,1194}: len 2, step 0, tagno 0 got [APPLICATION 69]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1191
+In ChargeInformation SEQUENCE left -1, edx=0 flags=1 opt=6 ec=6
+Current tag in ChargeInformation SEQUENCE for element 0 (chargedItem) is [APPLICATION 66] encoded in 2 bytes, of frame 1191
+Inside SEQUENCE ChargeInformation MF2
+Decoding ChargedItem as OCTET STRING (frame 1191)
+ber_check_tags(ChargedItem, size=1191, tm=0, step=0, tagno=0)
+Fetching tag from {008455E0,1191}: len 2, step 0, tagno 0 got [APPLICATION 66]
+Fetching len = 1
+Reallocating into 16
+Took 4 bytes to encode ChargedItem: [D]:1
+In ChargeInformation SEQUENCE decoded 0 ChargedItem of 1191 in 4 bytes rval.code 0, size=1191
+In ChargeInformation SEQUENCE left -1, edx=1 flags=1 opt=5 ec=6
+Current tag in ChargeInformation SEQUENCE for element 1 (exchangeRateCode) is [APPLICATION 105] encoded in 2 bytes, of frame 1187
+Inside SEQUENCE ChargeInformation MF2
+Decoding ExchangeRateCode as INTEGER (tm=0)
+ber_check_tags(ExchangeRateCode, size=1187, tm=0, step=0, tagno=0)
+Fetching tag from {008455E4,1187}: len 2, step 0, tagno 0 got [APPLICATION 105]
+Fetching len = 1
+ExchangeRateCode length is 1 bytes
+Took 4/1 bytes to encode ExchangeRateCode (1)
+In ChargeInformation SEQUENCE decoded 1 ExchangeRateCode of 1187 in 4 bytes rval.code 0, size=1187
+In ChargeInformation SEQUENCE left -1, edx=2 flags=1 opt=4 ec=6
+Current tag in ChargeInformation SEQUENCE for element 2 (callTypeGroup) is [APPLICATION 258] encoded in 3 bytes, of frame 1183
+Inside SEQUENCE ChargeInformation MF2
+Decoding CallTypeGroup as SEQUENCE
+ber_check_tags(CallTypeGroup, size=1183, tm=0, step=0, tagno=0)
+Fetching tag from {008455E8,1183}: len 3, step 0, tagno 0 got [APPLICATION 258]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1179
+In CallTypeGroup SEQUENCE left -1, edx=0 flags=1 opt=3 ec=3
+Current tag in CallTypeGroup SEQUENCE for element 0 (callTypeLevel1) is [APPLICATION 259] encoded in 3 bytes, of frame 1179
+Inside SEQUENCE CallTypeGroup MF2
+Decoding CallTypeLevel1 as INTEGER (tm=0)
+ber_check_tags(CallTypeLevel1, size=1179, tm=0, step=0, tagno=0)
+Fetching tag from {008455EC,1179}: len 3, step 0, tagno 0 got [APPLICATION 259]
+Fetching len = 1
+CallTypeLevel1 length is 1 bytes
+Took 5/1 bytes to encode CallTypeLevel1 (2)
+In CallTypeGroup SEQUENCE decoded 0 CallTypeLevel1 of 1179 in 5 bytes rval.code 0, size=1179
+In CallTypeGroup SEQUENCE left -1, edx=1 flags=1 opt=2 ec=3
+Current tag in CallTypeGroup SEQUENCE for element 1 (callTypeLevel2) is [APPLICATION 255] encoded in 3 bytes, of frame 1174
+Inside SEQUENCE CallTypeGroup MF2
+Decoding CallTypeLevel2 as INTEGER (tm=0)
+ber_check_tags(CallTypeLevel2, size=1174, tm=0, step=0, tagno=0)
+Fetching tag from {008455F1,1174}: len 3, step 0, tagno 0 got [APPLICATION 255]
+Fetching len = 1
+CallTypeLevel2 length is 1 bytes
+Took 5/1 bytes to encode CallTypeLevel2 (2)
+In CallTypeGroup SEQUENCE decoded 1 CallTypeLevel2 of 1174 in 5 bytes rval.code 0, size=1174
+In CallTypeGroup SEQUENCE left -1, edx=2 flags=1 opt=1 ec=3
+Current tag in CallTypeGroup SEQUENCE for element 2 (callTypeLevel3) is [APPLICATION 256] encoded in 3 bytes, of frame 1169
+Inside SEQUENCE CallTypeGroup MF2
+Decoding CallTypeLevel3 as INTEGER (tm=0)
+ber_check_tags(CallTypeLevel3, size=1169, tm=0, step=0, tagno=0)
+Fetching tag from {008455F6,1169}: len 3, step 0, tagno 0 got [APPLICATION 256]
+Fetching len = 1
+CallTypeLevel3 length is 1 bytes
+Took 5/1 bytes to encode CallTypeLevel3 (0)
+In CallTypeGroup SEQUENCE decoded 2 CallTypeLevel3 of 1169 in 5 bytes rval.code 0, size=1169
+SEQUENCE CallTypeGroup Leftover: -1, size = 1164
+In ChargeInformation SEQUENCE decoded 2 CallTypeGroup of 1183 in 21 bytes rval.code 0, size=1183
+In ChargeInformation SEQUENCE left -1, edx=3 flags=1 opt=3 ec=6
+Current tag in ChargeInformation SEQUENCE for element 3 (chargeDetailList) is [APPLICATION 64] encoded in 2 bytes, of frame 1162
+Inside SEQUENCE ChargeInformation MF2
+Decoding ChargeDetailList as SET OF
+ber_check_tags(ChargeDetailList, size=1162, tm=0, step=0, tagno=0)
+Fetching tag from {008455FD,1162}: len 2, step 0, tagno 0 got [APPLICATION 64]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1159
+Decoding ChargeDetail as SEQUENCE
+ber_check_tags(ChargeDetail, size=1159, tm=0, step=0, tagno=0)
+Fetching tag from {00845600,1159}: len 2, step 0, tagno 0 got [APPLICATION 63]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1156
+In ChargeDetail SEQUENCE left -1, edx=0 flags=1 opt=5 ec=5
+Current tag in ChargeDetail SEQUENCE for element 0 (chargeType) is [APPLICATION 71] encoded in 2 bytes, of frame 1156
+Inside SEQUENCE ChargeDetail MF2
+Decoding ChargeType as OCTET STRING (frame 1156)
+ber_check_tags(ChargeType, size=1156, tm=0, step=0, tagno=0)
+Fetching tag from {00845603,1156}: len 2, step 0, tagno 0 got [APPLICATION 71]
+Fetching len = 1
+Reallocating into 16
+Took 5 bytes to encode ChargeType: [00]:2
+In ChargeDetail SEQUENCE decoded 0 ChargeType of 1156 in 5 bytes rval.code 0, size=1156
+In ChargeDetail SEQUENCE left -1, edx=1 flags=1 opt=4 ec=5
+Current tag in ChargeDetail SEQUENCE for element 1 (charge) is [APPLICATION 62] encoded in 2 bytes, of frame 1151
+Inside SEQUENCE ChargeDetail MF2
+Decoding Charge as OCTET STRING (frame 1151)
+ber_check_tags(Charge, size=1151, tm=0, step=0, tagno=0)
+Fetching tag from {00845608,1151}: len 2, step 0, tagno 0 got [APPLICATION 62]
+Fetching len = 1
+Reallocating into 16
+Took 6 bytes to encode Charge: [å4]:3
+In ChargeDetail SEQUENCE decoded 1 Charge of 1151 in 6 bytes rval.code 0, size=1151
+In ChargeDetail SEQUENCE left -1, edx=2 flags=1 opt=3 ec=5
+Current tag in ChargeDetail SEQUENCE for element 2 (chargeableUnits) is [APPLICATION 65] encoded in 2 bytes, of frame 1145
+Inside SEQUENCE ChargeDetail MF2
+Decoding ChargeableUnits as OCTET STRING (frame 1145)
+ber_check_tags(ChargeableUnits, size=1145, tm=0, step=0, tagno=0)
+Fetching tag from {0084560E,1145}: len 2, step 0, tagno 0 got [APPLICATION 65]
+Fetching len = 1
+Reallocating into 16
+Took 5 bytes to encode ChargeableUnits: []:2
+In ChargeDetail SEQUENCE decoded 2 ChargeableUnits of 1145 in 5 bytes rval.code 0, size=1145
+In ChargeDetail SEQUENCE left -1, edx=3 flags=1 opt=2 ec=5
+Current tag in ChargeDetail SEQUENCE for element 3 (chargedUnits) is [APPLICATION 68] encoded in 2 bytes, of frame 1140
+Inside SEQUENCE ChargeDetail MF2
+Decoding ChargedUnits as OCTET STRING (frame 1140)
+ber_check_tags(ChargedUnits, size=1140, tm=0, step=0, tagno=0)
+Fetching tag from {00845613,1140}: len 2, step 0, tagno 0 got [APPLICATION 68]
+Fetching len = 1
+Reallocating into 16
+Took 5 bytes to encode ChargedUnits: []:2
+In ChargeDetail SEQUENCE decoded 3 ChargedUnits of 1140 in 5 bytes rval.code 0, size=1140
+In ChargeDetail SEQUENCE left -1, edx=4 flags=1 opt=1 ec=5
+Current tag in ChargeDetail SEQUENCE for element 4 (chargeDetailTimeStamp) is [UNIVERSAL 0] encoded in 1 bytes, of frame 1135
+edx = 4, opt = 1, ec=5
+SEQUENCE ChargeDetail Leftover: -1, size = 1135
+In ChargeDetailList SET OF ChargeDetail code 0 consumed 26
+In ChargeInformation SEQUENCE decoded 3 ChargeDetailList of 1162 in 31 bytes rval.code 0, size=1162
+In ChargeInformation SEQUENCE left -1, edx=4 flags=1 opt=2 ec=6
+Current tag in ChargeInformation SEQUENCE for element 4 (taxInformation) is [APPLICATION 214] encoded in 3 bytes, of frame 1131
+Inside SEQUENCE ChargeInformation MF2
+Decoding TaxInformationList as SET OF
+ber_check_tags(TaxInformationList, size=1131, tm=0, step=0, tagno=0)
+Fetching tag from {0084561C,1131}: len 3, step 0, tagno 0 got [APPLICATION 214]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1127
+Decoding TaxInformation as SEQUENCE
+ber_check_tags(TaxInformation, size=1127, tm=0, step=0, tagno=0)
+Fetching tag from {00845620,1127}: len 3, step 0, tagno 0 got [APPLICATION 213]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1123
+In TaxInformation SEQUENCE left -1, edx=0 flags=1 opt=3 ec=3
+Current tag in TaxInformation SEQUENCE for element 0 (taxCode) is [APPLICATION 212] encoded in 3 bytes, of frame 1123
+Inside SEQUENCE TaxInformation MF2
+Decoding TaxCode as INTEGER (tm=0)
+ber_check_tags(TaxCode, size=1123, tm=0, step=0, tagno=0)
+Fetching tag from {00845624,1123}: len 3, step 0, tagno 0 got [APPLICATION 212]
+Fetching len = 1
+TaxCode length is 1 bytes
+Took 5/1 bytes to encode TaxCode (1)
+In TaxInformation SEQUENCE decoded 0 TaxCode of 1123 in 5 bytes rval.code 0, size=1123
+In TaxInformation SEQUENCE left -1, edx=1 flags=1 opt=2 ec=3
+Current tag in TaxInformation SEQUENCE for element 1 (taxValue) is [APPLICATION 397] encoded in 3 bytes, of frame 1118
+Inside SEQUENCE TaxInformation MF2
+Decoding TaxValue as OCTET STRING (frame 1118)
+ber_check_tags(TaxValue, size=1118, tm=0, step=0, tagno=0)
+Fetching tag from {00845629,1118}: len 3, step 0, tagno 0 got [APPLICATION 397]
+Fetching len = 1
+Reallocating into 16
+Took 7 bytes to encode TaxValue: [âﬁ]:3
+In TaxInformation SEQUENCE decoded 1 TaxValue of 1118 in 7 bytes rval.code 0, size=1118
+In TaxInformation SEQUENCE left -1, edx=2 flags=1 opt=1 ec=3
+Current tag in TaxInformation SEQUENCE for element 2 (taxableAmount) is [UNIVERSAL 0] encoded in 1 bytes, of frame 1111
+edx = 2, opt = 1, ec=3
+SEQUENCE TaxInformation Leftover: -1, size = 1111
+In TaxInformationList SET OF TaxInformation code 0 consumed 18
+In ChargeInformation SEQUENCE decoded 4 TaxInformationList of 1131 in 24 bytes rval.code 0, size=1131
+In ChargeInformation SEQUENCE left -1, edx=5 flags=1 opt=1 ec=6
+Current tag in ChargeInformation SEQUENCE for element 5 (discountInformation) is [UNIVERSAL 0] encoded in 1 bytes, of frame 1107
+edx = 5, opt = 1, ec=6
+SEQUENCE ChargeInformation Leftover: -1, size = 1107
+In ChargeInformationList SET OF ChargeInformation code 0 consumed 89
+In BasicServiceUsed SEQUENCE decoded 2 ChargeInformationList of 1197 in 94 bytes rval.code 0, size=1197
+In BasicServiceUsed SEQUENCE left -1, edx=3 flags=1 opt=1 ec=4
+Current tag in BasicServiceUsed SEQUENCE for element 3 (hSCSDIndicator) is [UNIVERSAL 0] encoded in 1 bytes, of frame 1103
+edx = 3, opt = 1, ec=4
+SEQUENCE BasicServiceUsed Leftover: -1, size = 1103
+In BasicServiceUsedList SET OF BasicServiceUsed code 0 consumed 116
+In MobileOriginatedCall SEQUENCE decoded 3 BasicServiceUsedList of 1220 in 121 bytes rval.code 0, size=1220
+In MobileOriginatedCall SEQUENCE left -1, edx=4 flags=1 opt=4 ec=8
+Current tag in MobileOriginatedCall SEQUENCE for element 4 (supplServiceCode) is [UNIVERSAL 0] encoded in 1 bytes, of frame 1099
+edx = 4, opt = 4, ec=8
+SEQUENCE MobileOriginatedCall Leftover: -1, size = 1099
+CHOICE CallEventDetail Leftover: -1, size = 1097, tm=0, tc=0
+In SevereReturn SEQUENCE decoded 1 CallEventDetail of 1362 in 265 bytes rval.code 0, size=1362
+In SevereReturn SEQUENCE left -1, edx=2 flags=0 opt=0 ec=4
+Current tag in SevereReturn SEQUENCE for element 2 (errorDetail) is [APPLICATION 520] encoded in 3 bytes, of frame 1097
+Inside SEQUENCE SevereReturn MF2
+Decoding ErrorDetailList as SET OF
+ber_check_tags(ErrorDetailList, size=1097, tm=0, step=0, tagno=0)
+Fetching tag from {0084563E,1097}: len 3, step 0, tagno 0 got [APPLICATION 520]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1093
+Decoding ErrorDetail as SEQUENCE
+ber_check_tags(ErrorDetail, size=1093, tm=0, step=0, tagno=0)
+Fetching tag from {00845642,1093}: len 3, step 0, tagno 0 got [APPLICATION 521]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1089
+In ErrorDetail SEQUENCE left -1, edx=0 flags=1 opt=2 ec=3
+Current tag in ErrorDetail SEQUENCE for element 0 (errorContext) is [APPLICATION 549] encoded in 3 bytes, of frame 1089
+Inside SEQUENCE ErrorDetail MF2
+Decoding ErrorContextList as SET OF
+ber_check_tags(ErrorContextList, size=1089, tm=0, step=0, tagno=0)
+Fetching tag from {00845646,1089}: len 3, step 0, tagno 0 got [APPLICATION 549]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1085
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=1085, tm=0, step=0, tagno=0)
+Fetching tag from {0084564A,1085}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1081
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 1081
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=1081, tm=0, step=0, tagno=0)
+Fetching tag from {0084564E,1081}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (1)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 1081 in 5 bytes rval.code 0, size=1081
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 1076
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=1076, tm=0, step=0, tagno=0)
+Fetching tag from {00845653,1076}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (1)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 1076 in 5 bytes rval.code 0, size=1076
+SEQUENCE ErrorContext Leftover: -1, size = 1071
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=1069, tm=0, step=0, tagno=0)
+Fetching tag from {0084565A,1069}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1065
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 1065
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=1065, tm=0, step=0, tagno=0)
+Fetching tag from {0084565E,1065}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (3)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 1065 in 5 bytes rval.code 0, size=1065
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 547] encoded in 3 bytes, of frame 1060
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemOccurrence as INTEGER (tm=0)
+ber_check_tags(ItemOccurrence, size=1060, tm=0, step=0, tagno=0)
+Fetching tag from {00845663,1060}: len 3, step 0, tagno 0 got [APPLICATION 547]
+Fetching len = 1
+ItemOccurrence length is 1 bytes
+Took 5/1 bytes to encode ItemOccurrence (8)
+In ErrorContext SEQUENCE decoded 1 ItemOccurrence of 1060 in 5 bytes rval.code 0, size=1060
+In ErrorContext SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 2 (itemLevel) is [APPLICATION 548] encoded in 3 bytes, of frame 1055
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=1055, tm=0, step=0, tagno=0)
+Fetching tag from {00845668,1055}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (2)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 1055 in 5 bytes rval.code 0, size=1055
+SEQUENCE ErrorContext Leftover: -1, size = 1050
+In ErrorContextList SET OF ErrorContext code 0 consumed 21
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=1048, tm=0, step=0, tagno=0)
+Fetching tag from {0084566F,1048}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1044
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 1044
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=1044, tm=0, step=0, tagno=0)
+Fetching tag from {00845673,1044}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (9)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 1044 in 5 bytes rval.code 0, size=1044
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 1039
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=1039, tm=0, step=0, tagno=0)
+Fetching tag from {00845678,1039}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (3)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 1039 in 5 bytes rval.code 0, size=1039
+SEQUENCE ErrorContext Leftover: -1, size = 1034
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=1032, tm=0, step=0, tagno=0)
+Fetching tag from {0084567F,1032}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1028
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 1028
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=1028, tm=0, step=0, tagno=0)
+Fetching tag from {00845683,1028}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (38)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 1028 in 5 bytes rval.code 0, size=1028
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 547] encoded in 3 bytes, of frame 1023
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemOccurrence as INTEGER (tm=0)
+ber_check_tags(ItemOccurrence, size=1023, tm=0, step=0, tagno=0)
+Fetching tag from {00845688,1023}: len 3, step 0, tagno 0 got [APPLICATION 547]
+Fetching len = 1
+ItemOccurrence length is 1 bytes
+Took 5/1 bytes to encode ItemOccurrence (1)
+In ErrorContext SEQUENCE decoded 1 ItemOccurrence of 1023 in 5 bytes rval.code 0, size=1023
+In ErrorContext SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 2 (itemLevel) is [APPLICATION 548] encoded in 3 bytes, of frame 1018
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=1018, tm=0, step=0, tagno=0)
+Fetching tag from {0084568D,1018}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (4)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 1018 in 5 bytes rval.code 0, size=1018
+SEQUENCE ErrorContext Leftover: -1, size = 1013
+In ErrorContextList SET OF ErrorContext code 0 consumed 21
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=1011, tm=0, step=0, tagno=0)
+Fetching tag from {00845694,1011}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 1007
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 1007
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=1007, tm=0, step=0, tagno=0)
+Fetching tag from {00845698,1007}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (39)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 1007 in 5 bytes rval.code 0, size=1007
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 1002
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=1002, tm=0, step=0, tagno=0)
+Fetching tag from {0084569D,1002}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (5)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 1002 in 5 bytes rval.code 0, size=1002
+SEQUENCE ErrorContext Leftover: -1, size = 997
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=995, tm=0, step=0, tagno=0)
+Fetching tag from {008456A4,995}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 991
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 991
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=991, tm=0, step=0, tagno=0)
+Fetching tag from {008456A8,991}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (70)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 991 in 5 bytes rval.code 0, size=991
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 547] encoded in 3 bytes, of frame 986
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemOccurrence as INTEGER (tm=0)
+ber_check_tags(ItemOccurrence, size=986, tm=0, step=0, tagno=0)
+Fetching tag from {008456AD,986}: len 3, step 0, tagno 0 got [APPLICATION 547]
+Fetching len = 1
+ItemOccurrence length is 1 bytes
+Took 5/1 bytes to encode ItemOccurrence (1)
+In ErrorContext SEQUENCE decoded 1 ItemOccurrence of 986 in 5 bytes rval.code 0, size=986
+In ErrorContext SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 2 (itemLevel) is [APPLICATION 548] encoded in 3 bytes, of frame 981
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=981, tm=0, step=0, tagno=0)
+Fetching tag from {008456B2,981}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (6)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 981 in 5 bytes rval.code 0, size=981
+SEQUENCE ErrorContext Leftover: -1, size = 976
+In ErrorContextList SET OF ErrorContext code 0 consumed 21
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=974, tm=0, step=0, tagno=0)
+Fetching tag from {008456B9,974}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 970
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 970
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=970, tm=0, step=0, tagno=0)
+Fetching tag from {008456BD,970}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (69)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 970 in 5 bytes rval.code 0, size=970
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 965
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=965, tm=0, step=0, tagno=0)
+Fetching tag from {008456C2,965}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (7)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 965 in 5 bytes rval.code 0, size=965
+SEQUENCE ErrorContext Leftover: -1, size = 960
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=958, tm=0, step=0, tagno=0)
+Fetching tag from {008456C9,958}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 954
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 954
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=954, tm=0, step=0, tagno=0)
+Fetching tag from {008456CD,954}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (64)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 954 in 5 bytes rval.code 0, size=954
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 547] encoded in 3 bytes, of frame 949
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemOccurrence as INTEGER (tm=0)
+ber_check_tags(ItemOccurrence, size=949, tm=0, step=0, tagno=0)
+Fetching tag from {008456D2,949}: len 3, step 0, tagno 0 got [APPLICATION 547]
+Fetching len = 1
+ItemOccurrence length is 1 bytes
+Took 5/1 bytes to encode ItemOccurrence (1)
+In ErrorContext SEQUENCE decoded 1 ItemOccurrence of 949 in 5 bytes rval.code 0, size=949
+In ErrorContext SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 2 (itemLevel) is [APPLICATION 548] encoded in 3 bytes, of frame 944
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=944, tm=0, step=0, tagno=0)
+Fetching tag from {008456D7,944}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (8)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 944 in 5 bytes rval.code 0, size=944
+SEQUENCE ErrorContext Leftover: -1, size = 939
+In ErrorContextList SET OF ErrorContext code 0 consumed 21
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=937, tm=0, step=0, tagno=0)
+Fetching tag from {008456DE,937}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 933
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 933
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=933, tm=0, step=0, tagno=0)
+Fetching tag from {008456E2,933}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (63)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 933 in 5 bytes rval.code 0, size=933
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 928
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=928, tm=0, step=0, tagno=0)
+Fetching tag from {008456E7,928}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (9)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 928 in 5 bytes rval.code 0, size=928
+SEQUENCE ErrorContext Leftover: -1, size = 923
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=921, tm=0, step=0, tagno=0)
+Fetching tag from {008456EE,921}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 917
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 917
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=917, tm=0, step=0, tagno=0)
+Fetching tag from {008456F2,917}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (62)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 917 in 5 bytes rval.code 0, size=917
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 912
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=912, tm=0, step=0, tagno=0)
+Fetching tag from {008456F7,912}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (10)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 912 in 5 bytes rval.code 0, size=912
+SEQUENCE ErrorContext Leftover: -1, size = 907
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+In ErrorDetail SEQUENCE decoded 0 ErrorContextList of 1089 in 186 bytes rval.code 0, size=1089
+In ErrorDetail SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorDetail SEQUENCE for element 1 (itemOffset) is [APPLICATION 519] encoded in 3 bytes, of frame 903
+Inside SEQUENCE ErrorDetail MF2
+Decoding ErrorCode as INTEGER (tm=0)
+ber_check_tags(ErrorCode, size=903, tm=0, step=0, tagno=0)
+Fetching tag from {00845700,903}: len 3, step 0, tagno 0 got [APPLICATION 519]
+Fetching len = 1
+ErrorCode length is 2 bytes
+Took 6/2 bytes to encode ErrorCode (200)
+In ErrorDetail SEQUENCE decoded 2 ErrorCode of 903 in 6 bytes rval.code 0, size=903
+SEQUENCE ErrorDetail Leftover: -1, size = 897
+In ErrorDetailList SET OF ErrorDetail code 0 consumed 198
+Decoding ErrorDetail as SEQUENCE
+ber_check_tags(ErrorDetail, size=895, tm=0, step=0, tagno=0)
+Fetching tag from {00845708,895}: len 3, step 0, tagno 0 got [APPLICATION 521]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 891
+In ErrorDetail SEQUENCE left -1, edx=0 flags=1 opt=2 ec=3
+Current tag in ErrorDetail SEQUENCE for element 0 (errorContext) is [APPLICATION 549] encoded in 3 bytes, of frame 891
+Inside SEQUENCE ErrorDetail MF2
+Decoding ErrorContextList as SET OF
+ber_check_tags(ErrorContextList, size=891, tm=0, step=0, tagno=0)
+Fetching tag from {0084570C,891}: len 3, step 0, tagno 0 got [APPLICATION 549]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 887
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=887, tm=0, step=0, tagno=0)
+Fetching tag from {00845710,887}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 883
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 883
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=883, tm=0, step=0, tagno=0)
+Fetching tag from {00845714,883}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (1)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 883 in 5 bytes rval.code 0, size=883
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 878
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=878, tm=0, step=0, tagno=0)
+Fetching tag from {00845719,878}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (1)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 878 in 5 bytes rval.code 0, size=878
+SEQUENCE ErrorContext Leftover: -1, size = 873
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=871, tm=0, step=0, tagno=0)
+Fetching tag from {00845720,871}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 867
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 867
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=867, tm=0, step=0, tagno=0)
+Fetching tag from {00845724,867}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (3)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 867 in 5 bytes rval.code 0, size=867
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 547] encoded in 3 bytes, of frame 862
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemOccurrence as INTEGER (tm=0)
+ber_check_tags(ItemOccurrence, size=862, tm=0, step=0, tagno=0)
+Fetching tag from {00845729,862}: len 3, step 0, tagno 0 got [APPLICATION 547]
+Fetching len = 1
+ItemOccurrence length is 1 bytes
+Took 5/1 bytes to encode ItemOccurrence (8)
+In ErrorContext SEQUENCE decoded 1 ItemOccurrence of 862 in 5 bytes rval.code 0, size=862
+In ErrorContext SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 2 (itemLevel) is [APPLICATION 548] encoded in 3 bytes, of frame 857
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=857, tm=0, step=0, tagno=0)
+Fetching tag from {0084572E,857}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (2)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 857 in 5 bytes rval.code 0, size=857
+SEQUENCE ErrorContext Leftover: -1, size = 852
+In ErrorContextList SET OF ErrorContext code 0 consumed 21
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=850, tm=0, step=0, tagno=0)
+Fetching tag from {00845735,850}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 846
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 846
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=846, tm=0, step=0, tagno=0)
+Fetching tag from {00845739,846}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (9)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 846 in 5 bytes rval.code 0, size=846
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 841
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=841, tm=0, step=0, tagno=0)
+Fetching tag from {0084573E,841}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (3)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 841 in 5 bytes rval.code 0, size=841
+SEQUENCE ErrorContext Leftover: -1, size = 836
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=834, tm=0, step=0, tagno=0)
+Fetching tag from {00845745,834}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 830
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 830
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=830, tm=0, step=0, tagno=0)
+Fetching tag from {00845749,830}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 2 bytes
+Took 6/2 bytes to encode PathItemId (147)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 830 in 6 bytes rval.code 0, size=830
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 824
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=824, tm=0, step=0, tagno=0)
+Fetching tag from {0084574F,824}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (4)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 824 in 5 bytes rval.code 0, size=824
+SEQUENCE ErrorContext Leftover: -1, size = 819
+In ErrorContextList SET OF ErrorContext code 0 consumed 17
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=817, tm=0, step=0, tagno=0)
+Fetching tag from {00845756,817}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 813
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 813
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=813, tm=0, step=0, tagno=0)
+Fetching tag from {0084575A,813}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (89)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 813 in 5 bytes rval.code 0, size=813
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 808
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=808, tm=0, step=0, tagno=0)
+Fetching tag from {0084575F,808}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (5)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 808 in 5 bytes rval.code 0, size=808
+SEQUENCE ErrorContext Leftover: -1, size = 803
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+In ErrorDetail SEQUENCE decoded 0 ErrorContextList of 891 in 92 bytes rval.code 0, size=891
+In ErrorDetail SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorDetail SEQUENCE for element 1 (itemOffset) is [APPLICATION 519] encoded in 3 bytes, of frame 799
+Inside SEQUENCE ErrorDetail MF2
+Decoding ErrorCode as INTEGER (tm=0)
+ber_check_tags(ErrorCode, size=799, tm=0, step=0, tagno=0)
+Fetching tag from {00845768,799}: len 3, step 0, tagno 0 got [APPLICATION 519]
+Fetching len = 1
+ErrorCode length is 1 bytes
+Took 5/1 bytes to encode ErrorCode (41)
+In ErrorDetail SEQUENCE decoded 2 ErrorCode of 799 in 5 bytes rval.code 0, size=799
+SEQUENCE ErrorDetail Leftover: -1, size = 794
+In ErrorDetailList SET OF ErrorDetail code 0 consumed 103
+In SevereReturn SEQUENCE decoded 2 ErrorDetailList of 1097 in 307 bytes rval.code 0, size=1097
+In SevereReturn SEQUENCE left -1, edx=3 flags=1 opt=1 ec=4
+Current tag in SevereReturn SEQUENCE for element 3 (operatorSpecList) is [APPLICATION 551] encoded in 3 bytes, of frame 790
+Inside SEQUENCE SevereReturn MF2
+Decoding OperatorSpecList as SET OF
+ber_check_tags(OperatorSpecList, size=790, tm=0, step=0, tagno=0)
+Fetching tag from {00845771,790}: len 3, step 0, tagno 0 got [APPLICATION 551]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 786
+Decoding OperatorSpecInformation as OCTET STRING (frame 786)
+ber_check_tags(OperatorSpecInformation, size=786, tm=0, step=0, tagno=0)
+Fetching tag from {00845775,786}: len 3, step 0, tagno 0 got [APPLICATION 163]
+Fetching len = 1
+Reallocating into 32
+Took 20 bytes to encode OperatorSpecInformation: [IOTDate:20141001]:16
+In OperatorSpecList SET OF OperatorSpecInformation code 0 consumed 20
+Decoding OperatorSpecInformation as OCTET STRING (frame 766)
+ber_check_tags(OperatorSpecInformation, size=766, tm=0, step=0, tagno=0)
+Fetching tag from {00845789,766}: len 3, step 0, tagno 0 got [APPLICATION 163]
+Fetching len = 1
+Reallocating into 32
+Took 20 bytes to encode OperatorSpecInformation: [ExpCharge:198774]:16
+In OperatorSpecList SET OF OperatorSpecInformation code 0 consumed 20
+Decoding OperatorSpecInformation as OCTET STRING (frame 746)
+ber_check_tags(OperatorSpecInformation, size=746, tm=0, step=0, tagno=0)
+Fetching tag from {0084579D,746}: len 3, step 0, tagno 0 got [APPLICATION 163]
+Fetching len = 1
+Reallocating into 64
+Took 49 bytes to encode OperatorSpecInformation: [Calculation:1*3=0.000, 1*57=0.110, X*60~0.110]:45
+In OperatorSpecList SET OF OperatorSpecInformation code 0 consumed 49
+In SevereReturn SEQUENCE decoded 3 OperatorSpecList of 790 in 95 bytes rval.code 0, size=790
+SEQUENCE SevereReturn Leftover: -1, size = 695
+CHOICE ReturnDetail Leftover: -1, size = 693, tm=0, tc=0
+In ReturnDetailList SET OF ReturnDetail code 0 consumed 681
+Decoding ReturnDetail as CHOICE
+Structure consumes -1 bytes, buffer 693
+In ReturnDetail CHOICE tag length 3
+Decoding SevereReturn as SEQUENCE
+ber_check_tags(SevereReturn, size=693, tm=0, step=0, tagno=0)
+Fetching tag from {008457D2,693}: len 3, step 0, tagno 0 got [APPLICATION 540]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 689
+In SevereReturn SEQUENCE left -1, edx=0 flags=0 opt=0 ec=4
+Current tag in SevereReturn SEQUENCE for element 0 (fileSequenceNumber) is [APPLICATION 109] encoded in 2 bytes, of frame 689
+Inside SEQUENCE SevereReturn MF2
+Decoding FileSequenceNumber as OCTET STRING (frame 689)
+ber_check_tags(FileSequenceNumber, size=689, tm=0, step=0, tagno=0)
+Fetching tag from {008457D6,689}: len 2, step 0, tagno 0 got [APPLICATION 109]
+Fetching len = 1
+Reallocating into 16
+Took 8 bytes to encode FileSequenceNumber: [00020]:5
+In SevereReturn SEQUENCE decoded 0 FileSequenceNumber of 689 in 8 bytes rval.code 0, size=689
+In SevereReturn SEQUENCE left -1, edx=1 flags=0 opt=0 ec=4
+Current tag in SevereReturn SEQUENCE for element 1 (callEventDetail) is [APPLICATION 9] encoded in 1 bytes, of frame 681
+Inside SEQUENCE SevereReturn MF2
+Decoding CallEventDetail as CHOICE
+Structure consumes -1 bytes, buffer 681
+In CallEventDetail CHOICE tag length 1
+Decoding MobileOriginatedCall as SEQUENCE
+ber_check_tags(MobileOriginatedCall, size=681, tm=0, step=0, tagno=0)
+Fetching tag from {008457DE,681}: len 1, step 0, tagno 0 got [APPLICATION 9]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 679
+In MobileOriginatedCall SEQUENCE left -1, edx=0 flags=1 opt=8 ec=8
+Current tag in MobileOriginatedCall SEQUENCE for element 0 (basicCallInformation) is [APPLICATION 147] encoded in 3 bytes, of frame 679
+Inside SEQUENCE MobileOriginatedCall MF2
+Decoding MoBasicCallInformation as SEQUENCE
+ber_check_tags(MoBasicCallInformation, size=679, tm=0, step=0, tagno=0)
+Fetching tag from {008457E0,679}: len 3, step 0, tagno 0 got [APPLICATION 147]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 675
+In MoBasicCallInformation SEQUENCE left -1, edx=0 flags=1 opt=8 ec=8
+Current tag in MoBasicCallInformation SEQUENCE for element 0 (chargeableSubscriber) is [APPLICATION 427] encoded in 3 bytes, of frame 675
+Inside SEQUENCE MoBasicCallInformation MF2
+Decoding ChargeableSubscriber as CHOICE
+ber_check_tags(ChargeableSubscriber, size=675, tm=0, step=0, tagno=0)
+Fetching tag from {008457E4,675}: len 3, step 0, tagno 0 got [APPLICATION 427]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 671
+In ChargeableSubscriber CHOICE tag length 3
+Decoding SimChargeableSubscriber as SEQUENCE
+ber_check_tags(SimChargeableSubscriber, size=671, tm=0, step=0, tagno=0)
+Fetching tag from {008457E8,671}: len 3, step 0, tagno 0 got [APPLICATION 199]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 667
+In SimChargeableSubscriber SEQUENCE left -1, edx=0 flags=1 opt=2 ec=2
+Current tag in SimChargeableSubscriber SEQUENCE for element 0 (imsi) is [APPLICATION 129] encoded in 3 bytes, of frame 667
+Inside SEQUENCE SimChargeableSubscriber MF2
+Decoding Imsi as OCTET STRING (frame 667)
+ber_check_tags(Imsi, size=667, tm=0, step=0, tagno=0)
+Fetching tag from {008457EC,667}: len 3, step 0, tagno 0 got [APPLICATION 129]
+Fetching len = 1
+Reallocating into 16
+Took 12 bytes to encode Imsi: [$Ä"IH]:8
+In SimChargeableSubscriber SEQUENCE decoded 0 Imsi of 667 in 12 bytes rval.code 0, size=667
+In SimChargeableSubscriber SEQUENCE left -1, edx=1 flags=1 opt=1 ec=2
+Current tag in SimChargeableSubscriber SEQUENCE for element 1 (msisdn) is [APPLICATION 152] encoded in 3 bytes, of frame 655
+Inside SEQUENCE SimChargeableSubscriber MF2
+Decoding Msisdn as OCTET STRING (frame 655)
+ber_check_tags(Msisdn, size=655, tm=0, step=0, tagno=0)
+Fetching tag from {008457F8,655}: len 3, step 0, tagno 0 got [APPLICATION 152]
+Fetching len = 1
+Reallocating into 16
+Took 10 bytes to encode Msisdn: [7%hêb/]:6
+In SimChargeableSubscriber SEQUENCE decoded 1 Msisdn of 655 in 10 bytes rval.code 0, size=655
+SEQUENCE SimChargeableSubscriber Leftover: -1, size = 645
+CHOICE ChargeableSubscriber Leftover: -1, size = 643, tm=0, tc=1
+In MoBasicCallInformation SEQUENCE decoded 0 ChargeableSubscriber of 675 in 34 bytes rval.code 0, size=675
+In MoBasicCallInformation SEQUENCE left -1, edx=1 flags=1 opt=7 ec=8
+Current tag in MoBasicCallInformation SEQUENCE for element 1 (rapFileSequenceNumber) is [APPLICATION 89] encoded in 2 bytes, of frame 641
+Inside SEQUENCE MoBasicCallInformation MF2
+Decoding Destination as SEQUENCE
+ber_check_tags(Destination, size=641, tm=0, step=0, tagno=0)
+Fetching tag from {00845806,641}: len 2, step 0, tagno 0 got [APPLICATION 89]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 638
+In Destination SEQUENCE left -1, edx=0 flags=1 opt=5 ec=5
+Current tag in Destination SEQUENCE for element 0 (calledNumber) is [APPLICATION 279] encoded in 3 bytes, of frame 638
+Inside SEQUENCE Destination MF2
+Decoding DialledDigits as OCTET STRING (frame 638)
+ber_check_tags(DialledDigits, size=638, tm=0, step=0, tagno=0)
+Fetching tag from {00845809,638}: len 3, step 0, tagno 0 got [APPLICATION 279]
+Fetching len = 1
+Reallocating into 16
+Took 15 bytes to encode DialledDigits: [+3725287052]:11
+In Destination SEQUENCE decoded 1 DialledDigits of 638 in 15 bytes rval.code 0, size=638
+In Destination SEQUENCE left -1, edx=2 flags=1 opt=3 ec=5
+Current tag in Destination SEQUENCE for element 2 (calledPlace) is [UNIVERSAL 0] encoded in 1 bytes, of frame 623
+edx = 2, opt = 3, ec=5
+SEQUENCE Destination Leftover: -1, size = 623
+In MoBasicCallInformation SEQUENCE decoded 2 Destination of 641 in 20 bytes rval.code 0, size=641
+In MoBasicCallInformation SEQUENCE left -1, edx=3 flags=1 opt=5 ec=8
+Current tag in MoBasicCallInformation SEQUENCE for element 3 (destinationNetwork) is [APPLICATION 44] encoded in 2 bytes, of frame 621
+Inside SEQUENCE MoBasicCallInformation MF2
+Decoding CallEventStartTimeStamp as SEQUENCE
+ber_check_tags(CallEventStartTimeStamp, size=621, tm=0, step=0, tagno=0)
+Fetching tag from {0084581A,621}: len 2, step 0, tagno 0 got [APPLICATION 44]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 618
+In CallEventStartTimeStamp SEQUENCE left -1, edx=0 flags=1 opt=2 ec=2
+Current tag in CallEventStartTimeStamp SEQUENCE for element 0 (localTimeStamp) is [APPLICATION 16] encoded in 1 bytes, of frame 618
+Inside SEQUENCE CallEventStartTimeStamp MF2
+Decoding LocalTimeStamp as OCTET STRING (frame 618)
+ber_check_tags(LocalTimeStamp, size=618, tm=0, step=0, tagno=0)
+Fetching tag from {0084581D,618}: len 1, step 0, tagno 0 got [APPLICATION 16]
+Fetching len = 1
+Reallocating into 16
+Took 16 bytes to encode LocalTimeStamp: [20150621141325]:14
+In CallEventStartTimeStamp SEQUENCE decoded 0 LocalTimeStamp of 618 in 16 bytes rval.code 0, size=618
+In CallEventStartTimeStamp SEQUENCE left -1, edx=1 flags=1 opt=1 ec=2
+Current tag in CallEventStartTimeStamp SEQUENCE for element 1 (utcTimeOffsetCode) is [APPLICATION 232] encoded in 3 bytes, of frame 602
+Inside SEQUENCE CallEventStartTimeStamp MF2
+Decoding UtcTimeOffsetCode as INTEGER (tm=0)
+ber_check_tags(UtcTimeOffsetCode, size=602, tm=0, step=0, tagno=0)
+Fetching tag from {0084582D,602}: len 3, step 0, tagno 0 got [APPLICATION 232]
+Fetching len = 1
+UtcTimeOffsetCode length is 1 bytes
+Took 5/1 bytes to encode UtcTimeOffsetCode (1)
+In CallEventStartTimeStamp SEQUENCE decoded 1 UtcTimeOffsetCode of 602 in 5 bytes rval.code 0, size=602
+SEQUENCE CallEventStartTimeStamp Leftover: -1, size = 597
+In MoBasicCallInformation SEQUENCE decoded 4 CallEventStartTimeStamp of 621 in 26 bytes rval.code 0, size=621
+In MoBasicCallInformation SEQUENCE left -1, edx=5 flags=1 opt=3 ec=8
+Current tag in MoBasicCallInformation SEQUENCE for element 5 (totalCallEventDuration) is [APPLICATION 223] encoded in 3 bytes, of frame 595
+Inside SEQUENCE MoBasicCallInformation MF2
+Decoding TotalCallEventDuration as INTEGER (tm=0)
+ber_check_tags(TotalCallEventDuration, size=595, tm=0, step=0, tagno=0)
+Fetching tag from {00845834,595}: len 3, step 0, tagno 0 got [APPLICATION 223]
+Fetching len = 1
+TotalCallEventDuration length is 1 bytes
+Took 5/1 bytes to encode TotalCallEventDuration (26)
+In MoBasicCallInformation SEQUENCE decoded 5 TotalCallEventDuration of 595 in 5 bytes rval.code 0, size=595
+In MoBasicCallInformation SEQUENCE left -1, edx=6 flags=1 opt=2 ec=8
+Current tag in MoBasicCallInformation SEQUENCE for element 6 (simToolkitIndicator) is [UNIVERSAL 0] encoded in 1 bytes, of frame 590
+edx = 6, opt = 2, ec=8
+SEQUENCE MoBasicCallInformation Leftover: -1, size = 590
+In MobileOriginatedCall SEQUENCE decoded 0 MoBasicCallInformation of 679 in 91 bytes rval.code 0, size=679
+In MobileOriginatedCall SEQUENCE left -1, edx=1 flags=1 opt=7 ec=8
+Current tag in MobileOriginatedCall SEQUENCE for element 1 (locationInformation) is [APPLICATION 138] encoded in 3 bytes, of frame 588
+Inside SEQUENCE MobileOriginatedCall MF2
+Decoding LocationInformation as SEQUENCE
+ber_check_tags(LocationInformation, size=588, tm=0, step=0, tagno=0)
+Fetching tag from {0084583B,588}: len 3, step 0, tagno 0 got [APPLICATION 138]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 584
+In LocationInformation SEQUENCE left -1, edx=0 flags=1 opt=3 ec=3
+Current tag in LocationInformation SEQUENCE for element 0 (networkLocation) is [APPLICATION 156] encoded in 3 bytes, of frame 584
+Inside SEQUENCE LocationInformation MF2
+Decoding NetworkLocation as SEQUENCE
+ber_check_tags(NetworkLocation, size=584, tm=0, step=0, tagno=0)
+Fetching tag from {0084583F,584}: len 3, step 0, tagno 0 got [APPLICATION 156]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 580
+In NetworkLocation SEQUENCE left -1, edx=0 flags=1 opt=4 ec=4
+Current tag in NetworkLocation SEQUENCE for element 0 (recEntityCode) is [APPLICATION 184] encoded in 3 bytes, of frame 580
+Inside SEQUENCE NetworkLocation MF2
+Decoding RecEntityCode as INTEGER (tm=0)
+ber_check_tags(RecEntityCode, size=580, tm=0, step=0, tagno=0)
+Fetching tag from {00845843,580}: len 3, step 0, tagno 0 got [APPLICATION 184]
+Fetching len = 1
+RecEntityCode length is 1 bytes
+Took 5/1 bytes to encode RecEntityCode (1)
+In NetworkLocation SEQUENCE decoded 0 RecEntityCode of 580 in 5 bytes rval.code 0, size=580
+In NetworkLocation SEQUENCE left -1, edx=1 flags=1 opt=3 ec=4
+Current tag in NetworkLocation SEQUENCE for element 1 (callReference) is [APPLICATION 136] encoded in 3 bytes, of frame 575
+Inside SEQUENCE NetworkLocation MF2
+Decoding LocationArea as INTEGER (tm=0)
+ber_check_tags(LocationArea, size=575, tm=0, step=0, tagno=0)
+Fetching tag from {00845848,575}: len 3, step 0, tagno 0 got [APPLICATION 136]
+Fetching len = 1
+LocationArea length is 3 bytes
+Took 7/3 bytes to encode LocationArea (51200)
+In NetworkLocation SEQUENCE decoded 2 LocationArea of 575 in 7 bytes rval.code 0, size=575
+In NetworkLocation SEQUENCE left -1, edx=3 flags=1 opt=1 ec=4
+Current tag in NetworkLocation SEQUENCE for element 3 (cellId) is [APPLICATION 59] encoded in 2 bytes, of frame 568
+Inside SEQUENCE NetworkLocation MF2
+Decoding CellId as INTEGER (tm=0)
+ber_check_tags(CellId, size=568, tm=0, step=0, tagno=0)
+Fetching tag from {0084584F,568}: len 2, step 0, tagno 0 got [APPLICATION 59]
+Fetching len = 1
+CellId length is 2 bytes
+Took 5/2 bytes to encode CellId (19002)
+In NetworkLocation SEQUENCE decoded 3 CellId of 568 in 5 bytes rval.code 0, size=568
+SEQUENCE NetworkLocation Leftover: -1, size = 563
+In LocationInformation SEQUENCE decoded 0 NetworkLocation of 584 in 23 bytes rval.code 0, size=584
+In LocationInformation SEQUENCE left -1, edx=1 flags=1 opt=2 ec=3
+Current tag in LocationInformation SEQUENCE for element 1 (homeLocationInformation) is [UNIVERSAL 0] encoded in 1 bytes, of frame 561
+edx = 1, opt = 2, ec=3
+SEQUENCE LocationInformation Leftover: -1, size = 561
+In MobileOriginatedCall SEQUENCE decoded 1 LocationInformation of 588 in 29 bytes rval.code 0, size=588
+In MobileOriginatedCall SEQUENCE left -1, edx=2 flags=1 opt=6 ec=8
+Current tag in MobileOriginatedCall SEQUENCE for element 2 (equipmentIdentifier) is [APPLICATION 429] encoded in 3 bytes, of frame 559
+Inside SEQUENCE MobileOriginatedCall MF2
+Decoding ImeiOrEsn as CHOICE
+ber_check_tags(ImeiOrEsn, size=559, tm=0, step=0, tagno=0)
+Fetching tag from {00845858,559}: len 3, step 0, tagno 0 got [APPLICATION 429]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 555
+In ImeiOrEsn CHOICE tag length 3
+Decoding Imei as OCTET STRING (frame 555)
+ber_check_tags(Imei, size=555, tm=0, step=0, tagno=0)
+Fetching tag from {0084585C,555}: len 3, step 0, tagno 0 got [APPLICATION 128]
+Fetching len = 1
+Reallocating into 16
+Took 12 bytes to encode Imei: [5QY9î]:8
+CHOICE ImeiOrEsn Leftover: -1, size = 543, tm=0, tc=1
+In MobileOriginatedCall SEQUENCE decoded 2 ImeiOrEsn of 559 in 18 bytes rval.code 0, size=559
+In MobileOriginatedCall SEQUENCE left -1, edx=3 flags=1 opt=5 ec=8
+Current tag in MobileOriginatedCall SEQUENCE for element 3 (basicServiceUsedList) is [APPLICATION 38] encoded in 2 bytes, of frame 541
+Inside SEQUENCE MobileOriginatedCall MF2
+Decoding BasicServiceUsedList as SET OF
+ber_check_tags(BasicServiceUsedList, size=541, tm=0, step=0, tagno=0)
+Fetching tag from {0084586A,541}: len 2, step 0, tagno 0 got [APPLICATION 38]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 538
+Decoding BasicServiceUsed as SEQUENCE
+ber_check_tags(BasicServiceUsed, size=538, tm=0, step=0, tagno=0)
+Fetching tag from {0084586D,538}: len 2, step 0, tagno 0 got [APPLICATION 39]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 535
+In BasicServiceUsed SEQUENCE left -1, edx=0 flags=1 opt=4 ec=4
+Current tag in BasicServiceUsed SEQUENCE for element 0 (basicService) is [APPLICATION 36] encoded in 2 bytes, of frame 535
+Inside SEQUENCE BasicServiceUsed MF2
+Decoding BasicService as SEQUENCE
+ber_check_tags(BasicService, size=535, tm=0, step=0, tagno=0)
+Fetching tag from {00845870,535}: len 2, step 0, tagno 0 got [APPLICATION 36]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 532
+In BasicService SEQUENCE left -1, edx=0 flags=1 opt=6 ec=6
+Current tag in BasicService SEQUENCE for element 0 (serviceCode) is [APPLICATION 426] encoded in 3 bytes, of frame 532
+Inside SEQUENCE BasicService MF2
+Decoding BasicServiceCode as CHOICE
+ber_check_tags(BasicServiceCode, size=532, tm=0, step=0, tagno=0)
+Fetching tag from {00845873,532}: len 3, step 0, tagno 0 got [APPLICATION 426]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 528
+In BasicServiceCode CHOICE tag length 3
+Decoding TeleServiceCode as OCTET STRING (frame 528)
+ber_check_tags(TeleServiceCode, size=528, tm=0, step=0, tagno=0)
+Fetching tag from {00845877,528}: len 3, step 0, tagno 0 got [APPLICATION 218]
+Fetching len = 1
+Reallocating into 16
+Took 6 bytes to encode TeleServiceCode: [11]:2
+CHOICE BasicServiceCode Leftover: -1, size = 522, tm=0, tc=1
+In BasicService SEQUENCE decoded 0 BasicServiceCode of 532 in 12 bytes rval.code 0, size=532
+In BasicService SEQUENCE left -1, edx=1 flags=1 opt=5 ec=6
+Current tag in BasicService SEQUENCE for element 1 (transparencyIndicator) is [UNIVERSAL 0] encoded in 1 bytes, of frame 520
+edx = 1, opt = 5, ec=6
+SEQUENCE BasicService Leftover: -1, size = 520
+In BasicServiceUsed SEQUENCE decoded 0 BasicService of 535 in 17 bytes rval.code 0, size=535
+In BasicServiceUsed SEQUENCE left -1, edx=1 flags=1 opt=3 ec=4
+Current tag in BasicServiceUsed SEQUENCE for element 1 (chargingTimeStamp) is [APPLICATION 70] encoded in 2 bytes, of frame 518
+Inside SEQUENCE BasicServiceUsed MF2
+Decoding ChargeInformationList as SET OF
+ber_check_tags(ChargeInformationList, size=518, tm=0, step=0, tagno=0)
+Fetching tag from {00845881,518}: len 2, step 0, tagno 0 got [APPLICATION 70]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 515
+Decoding ChargeInformation as SEQUENCE
+ber_check_tags(ChargeInformation, size=515, tm=0, step=0, tagno=0)
+Fetching tag from {00845884,515}: len 2, step 0, tagno 0 got [APPLICATION 69]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 512
+In ChargeInformation SEQUENCE left -1, edx=0 flags=1 opt=6 ec=6
+Current tag in ChargeInformation SEQUENCE for element 0 (chargedItem) is [APPLICATION 66] encoded in 2 bytes, of frame 512
+Inside SEQUENCE ChargeInformation MF2
+Decoding ChargedItem as OCTET STRING (frame 512)
+ber_check_tags(ChargedItem, size=512, tm=0, step=0, tagno=0)
+Fetching tag from {00845887,512}: len 2, step 0, tagno 0 got [APPLICATION 66]
+Fetching len = 1
+Reallocating into 16
+Took 4 bytes to encode ChargedItem: [D]:1
+In ChargeInformation SEQUENCE decoded 0 ChargedItem of 512 in 4 bytes rval.code 0, size=512
+In ChargeInformation SEQUENCE left -1, edx=1 flags=1 opt=5 ec=6
+Current tag in ChargeInformation SEQUENCE for element 1 (exchangeRateCode) is [APPLICATION 105] encoded in 2 bytes, of frame 508
+Inside SEQUENCE ChargeInformation MF2
+Decoding ExchangeRateCode as INTEGER (tm=0)
+ber_check_tags(ExchangeRateCode, size=508, tm=0, step=0, tagno=0)
+Fetching tag from {0084588B,508}: len 2, step 0, tagno 0 got [APPLICATION 105]
+Fetching len = 1
+ExchangeRateCode length is 1 bytes
+Took 4/1 bytes to encode ExchangeRateCode (1)
+In ChargeInformation SEQUENCE decoded 1 ExchangeRateCode of 508 in 4 bytes rval.code 0, size=508
+In ChargeInformation SEQUENCE left -1, edx=2 flags=1 opt=4 ec=6
+Current tag in ChargeInformation SEQUENCE for element 2 (callTypeGroup) is [APPLICATION 258] encoded in 3 bytes, of frame 504
+Inside SEQUENCE ChargeInformation MF2
+Decoding CallTypeGroup as SEQUENCE
+ber_check_tags(CallTypeGroup, size=504, tm=0, step=0, tagno=0)
+Fetching tag from {0084588F,504}: len 3, step 0, tagno 0 got [APPLICATION 258]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 500
+In CallTypeGroup SEQUENCE left -1, edx=0 flags=1 opt=3 ec=3
+Current tag in CallTypeGroup SEQUENCE for element 0 (callTypeLevel1) is [APPLICATION 259] encoded in 3 bytes, of frame 500
+Inside SEQUENCE CallTypeGroup MF2
+Decoding CallTypeLevel1 as INTEGER (tm=0)
+ber_check_tags(CallTypeLevel1, size=500, tm=0, step=0, tagno=0)
+Fetching tag from {00845893,500}: len 3, step 0, tagno 0 got [APPLICATION 259]
+Fetching len = 1
+CallTypeLevel1 length is 1 bytes
+Took 5/1 bytes to encode CallTypeLevel1 (2)
+In CallTypeGroup SEQUENCE decoded 0 CallTypeLevel1 of 500 in 5 bytes rval.code 0, size=500
+In CallTypeGroup SEQUENCE left -1, edx=1 flags=1 opt=2 ec=3
+Current tag in CallTypeGroup SEQUENCE for element 1 (callTypeLevel2) is [APPLICATION 255] encoded in 3 bytes, of frame 495
+Inside SEQUENCE CallTypeGroup MF2
+Decoding CallTypeLevel2 as INTEGER (tm=0)
+ber_check_tags(CallTypeLevel2, size=495, tm=0, step=0, tagno=0)
+Fetching tag from {00845898,495}: len 3, step 0, tagno 0 got [APPLICATION 255]
+Fetching len = 1
+CallTypeLevel2 length is 1 bytes
+Took 5/1 bytes to encode CallTypeLevel2 (2)
+In CallTypeGroup SEQUENCE decoded 1 CallTypeLevel2 of 495 in 5 bytes rval.code 0, size=495
+In CallTypeGroup SEQUENCE left -1, edx=2 flags=1 opt=1 ec=3
+Current tag in CallTypeGroup SEQUENCE for element 2 (callTypeLevel3) is [APPLICATION 256] encoded in 3 bytes, of frame 490
+Inside SEQUENCE CallTypeGroup MF2
+Decoding CallTypeLevel3 as INTEGER (tm=0)
+ber_check_tags(CallTypeLevel3, size=490, tm=0, step=0, tagno=0)
+Fetching tag from {0084589D,490}: len 3, step 0, tagno 0 got [APPLICATION 256]
+Fetching len = 1
+CallTypeLevel3 length is 1 bytes
+Took 5/1 bytes to encode CallTypeLevel3 (0)
+In CallTypeGroup SEQUENCE decoded 2 CallTypeLevel3 of 490 in 5 bytes rval.code 0, size=490
+SEQUENCE CallTypeGroup Leftover: -1, size = 485
+In ChargeInformation SEQUENCE decoded 2 CallTypeGroup of 504 in 21 bytes rval.code 0, size=504
+In ChargeInformation SEQUENCE left -1, edx=3 flags=1 opt=3 ec=6
+Current tag in ChargeInformation SEQUENCE for element 3 (chargeDetailList) is [APPLICATION 64] encoded in 2 bytes, of frame 483
+Inside SEQUENCE ChargeInformation MF2
+Decoding ChargeDetailList as SET OF
+ber_check_tags(ChargeDetailList, size=483, tm=0, step=0, tagno=0)
+Fetching tag from {008458A4,483}: len 2, step 0, tagno 0 got [APPLICATION 64]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 480
+Decoding ChargeDetail as SEQUENCE
+ber_check_tags(ChargeDetail, size=480, tm=0, step=0, tagno=0)
+Fetching tag from {008458A7,480}: len 2, step 0, tagno 0 got [APPLICATION 63]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 477
+In ChargeDetail SEQUENCE left -1, edx=0 flags=1 opt=5 ec=5
+Current tag in ChargeDetail SEQUENCE for element 0 (chargeType) is [APPLICATION 71] encoded in 2 bytes, of frame 477
+Inside SEQUENCE ChargeDetail MF2
+Decoding ChargeType as OCTET STRING (frame 477)
+ber_check_tags(ChargeType, size=477, tm=0, step=0, tagno=0)
+Fetching tag from {008458AA,477}: len 2, step 0, tagno 0 got [APPLICATION 71]
+Fetching len = 1
+Reallocating into 16
+Took 5 bytes to encode ChargeType: [00]:2
+In ChargeDetail SEQUENCE decoded 0 ChargeType of 477 in 5 bytes rval.code 0, size=477
+In ChargeDetail SEQUENCE left -1, edx=1 flags=1 opt=4 ec=5
+Current tag in ChargeDetail SEQUENCE for element 1 (charge) is [APPLICATION 62] encoded in 2 bytes, of frame 472
+Inside SEQUENCE ChargeDetail MF2
+Decoding Charge as OCTET STRING (frame 472)
+ber_check_tags(Charge, size=472, tm=0, step=0, tagno=0)
+Fetching tag from {008458AF,472}: len 2, step 0, tagno 0 got [APPLICATION 62]
+Fetching len = 1
+Reallocating into 16
+Took 6 bytes to encode Charge: [Ÿj]:3
+In ChargeDetail SEQUENCE decoded 1 Charge of 472 in 6 bytes rval.code 0, size=472
+In ChargeDetail SEQUENCE left -1, edx=2 flags=1 opt=3 ec=5
+Current tag in ChargeDetail SEQUENCE for element 2 (chargeableUnits) is [APPLICATION 65] encoded in 2 bytes, of frame 466
+Inside SEQUENCE ChargeDetail MF2
+Decoding ChargeableUnits as OCTET STRING (frame 466)
+ber_check_tags(ChargeableUnits, size=466, tm=0, step=0, tagno=0)
+Fetching tag from {008458B5,466}: len 2, step 0, tagno 0 got [APPLICATION 65]
+Fetching len = 1
+Reallocating into 16
+Took 4 bytes to encode ChargeableUnits: []:1
+In ChargeDetail SEQUENCE decoded 2 ChargeableUnits of 466 in 4 bytes rval.code 0, size=466
+In ChargeDetail SEQUENCE left -1, edx=3 flags=1 opt=2 ec=5
+Current tag in ChargeDetail SEQUENCE for element 3 (chargedUnits) is [APPLICATION 68] encoded in 2 bytes, of frame 462
+Inside SEQUENCE ChargeDetail MF2
+Decoding ChargedUnits as OCTET STRING (frame 462)
+ber_check_tags(ChargedUnits, size=462, tm=0, step=0, tagno=0)
+Fetching tag from {008458B9,462}: len 2, step 0, tagno 0 got [APPLICATION 68]
+Fetching len = 1
+Reallocating into 16
+Took 4 bytes to encode ChargedUnits: [<]:1
+In ChargeDetail SEQUENCE decoded 3 ChargedUnits of 462 in 4 bytes rval.code 0, size=462
+In ChargeDetail SEQUENCE left -1, edx=4 flags=1 opt=1 ec=5
+Current tag in ChargeDetail SEQUENCE for element 4 (chargeDetailTimeStamp) is [UNIVERSAL 0] encoded in 1 bytes, of frame 458
+edx = 4, opt = 1, ec=5
+SEQUENCE ChargeDetail Leftover: -1, size = 458
+In ChargeDetailList SET OF ChargeDetail code 0 consumed 24
+In ChargeInformation SEQUENCE decoded 3 ChargeDetailList of 483 in 29 bytes rval.code 0, size=483
+In ChargeInformation SEQUENCE left -1, edx=4 flags=1 opt=2 ec=6
+Current tag in ChargeInformation SEQUENCE for element 4 (taxInformation) is [APPLICATION 214] encoded in 3 bytes, of frame 454
+Inside SEQUENCE ChargeInformation MF2
+Decoding TaxInformationList as SET OF
+ber_check_tags(TaxInformationList, size=454, tm=0, step=0, tagno=0)
+Fetching tag from {008458C1,454}: len 3, step 0, tagno 0 got [APPLICATION 214]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 450
+Decoding TaxInformation as SEQUENCE
+ber_check_tags(TaxInformation, size=450, tm=0, step=0, tagno=0)
+Fetching tag from {008458C5,450}: len 3, step 0, tagno 0 got [APPLICATION 213]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 446
+In TaxInformation SEQUENCE left -1, edx=0 flags=1 opt=3 ec=3
+Current tag in TaxInformation SEQUENCE for element 0 (taxCode) is [APPLICATION 212] encoded in 3 bytes, of frame 446
+Inside SEQUENCE TaxInformation MF2
+Decoding TaxCode as INTEGER (tm=0)
+ber_check_tags(TaxCode, size=446, tm=0, step=0, tagno=0)
+Fetching tag from {008458C9,446}: len 3, step 0, tagno 0 got [APPLICATION 212]
+Fetching len = 1
+TaxCode length is 1 bytes
+Took 5/1 bytes to encode TaxCode (1)
+In TaxInformation SEQUENCE decoded 0 TaxCode of 446 in 5 bytes rval.code 0, size=446
+In TaxInformation SEQUENCE left -1, edx=1 flags=1 opt=2 ec=3
+Current tag in TaxInformation SEQUENCE for element 1 (taxValue) is [APPLICATION 397] encoded in 3 bytes, of frame 441
+Inside SEQUENCE TaxInformation MF2
+Decoding TaxValue as OCTET STRING (frame 441)
+ber_check_tags(TaxValue, size=441, tm=0, step=0, tagno=0)
+Fetching tag from {008458CE,441}: len 3, step 0, tagno 0 got [APPLICATION 397]
+Fetching len = 1
+Reallocating into 16
+Took 7 bytes to encode TaxValue: []:3
+In TaxInformation SEQUENCE decoded 1 TaxValue of 441 in 7 bytes rval.code 0, size=441
+In TaxInformation SEQUENCE left -1, edx=2 flags=1 opt=1 ec=3
+Current tag in TaxInformation SEQUENCE for element 2 (taxableAmount) is [UNIVERSAL 0] encoded in 1 bytes, of frame 434
+edx = 2, opt = 1, ec=3
+SEQUENCE TaxInformation Leftover: -1, size = 434
+In TaxInformationList SET OF TaxInformation code 0 consumed 18
+In ChargeInformation SEQUENCE decoded 4 TaxInformationList of 454 in 24 bytes rval.code 0, size=454
+In ChargeInformation SEQUENCE left -1, edx=5 flags=1 opt=1 ec=6
+Current tag in ChargeInformation SEQUENCE for element 5 (discountInformation) is [UNIVERSAL 0] encoded in 1 bytes, of frame 430
+edx = 5, opt = 1, ec=6
+SEQUENCE ChargeInformation Leftover: -1, size = 430
+In ChargeInformationList SET OF ChargeInformation code 0 consumed 87
+In BasicServiceUsed SEQUENCE decoded 2 ChargeInformationList of 518 in 92 bytes rval.code 0, size=518
+In BasicServiceUsed SEQUENCE left -1, edx=3 flags=1 opt=1 ec=4
+Current tag in BasicServiceUsed SEQUENCE for element 3 (hSCSDIndicator) is [UNIVERSAL 0] encoded in 1 bytes, of frame 426
+edx = 3, opt = 1, ec=4
+SEQUENCE BasicServiceUsed Leftover: -1, size = 426
+In BasicServiceUsedList SET OF BasicServiceUsed code 0 consumed 114
+In MobileOriginatedCall SEQUENCE decoded 3 BasicServiceUsedList of 541 in 119 bytes rval.code 0, size=541
+In MobileOriginatedCall SEQUENCE left -1, edx=4 flags=1 opt=4 ec=8
+Current tag in MobileOriginatedCall SEQUENCE for element 4 (supplServiceCode) is [UNIVERSAL 0] encoded in 1 bytes, of frame 422
+edx = 4, opt = 4, ec=8
+SEQUENCE MobileOriginatedCall Leftover: -1, size = 422
+CHOICE CallEventDetail Leftover: -1, size = 420, tm=0, tc=0
+In SevereReturn SEQUENCE decoded 1 CallEventDetail of 681 in 261 bytes rval.code 0, size=681
+In SevereReturn SEQUENCE left -1, edx=2 flags=0 opt=0 ec=4
+Current tag in SevereReturn SEQUENCE for element 2 (errorDetail) is [APPLICATION 520] encoded in 3 bytes, of frame 420
+Inside SEQUENCE SevereReturn MF2
+Decoding ErrorDetailList as SET OF
+ber_check_tags(ErrorDetailList, size=420, tm=0, step=0, tagno=0)
+Fetching tag from {008458E3,420}: len 3, step 0, tagno 0 got [APPLICATION 520]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 416
+Decoding ErrorDetail as SEQUENCE
+ber_check_tags(ErrorDetail, size=416, tm=0, step=0, tagno=0)
+Fetching tag from {008458E7,416}: len 3, step 0, tagno 0 got [APPLICATION 521]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 412
+In ErrorDetail SEQUENCE left -1, edx=0 flags=1 opt=2 ec=3
+Current tag in ErrorDetail SEQUENCE for element 0 (errorContext) is [APPLICATION 549] encoded in 3 bytes, of frame 412
+Inside SEQUENCE ErrorDetail MF2
+Decoding ErrorContextList as SET OF
+ber_check_tags(ErrorContextList, size=412, tm=0, step=0, tagno=0)
+Fetching tag from {008458EB,412}: len 3, step 0, tagno 0 got [APPLICATION 549]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 408
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=408, tm=0, step=0, tagno=0)
+Fetching tag from {008458EF,408}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 404
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 404
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=404, tm=0, step=0, tagno=0)
+Fetching tag from {008458F3,404}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (1)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 404 in 5 bytes rval.code 0, size=404
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 399
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=399, tm=0, step=0, tagno=0)
+Fetching tag from {008458F8,399}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (1)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 399 in 5 bytes rval.code 0, size=399
+SEQUENCE ErrorContext Leftover: -1, size = 394
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=392, tm=0, step=0, tagno=0)
+Fetching tag from {008458FF,392}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 388
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 388
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=388, tm=0, step=0, tagno=0)
+Fetching tag from {00845903,388}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (3)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 388 in 5 bytes rval.code 0, size=388
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 547] encoded in 3 bytes, of frame 383
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemOccurrence as INTEGER (tm=0)
+ber_check_tags(ItemOccurrence, size=383, tm=0, step=0, tagno=0)
+Fetching tag from {00845908,383}: len 3, step 0, tagno 0 got [APPLICATION 547]
+Fetching len = 1
+ItemOccurrence length is 1 bytes
+Took 5/1 bytes to encode ItemOccurrence (11)
+In ErrorContext SEQUENCE decoded 1 ItemOccurrence of 383 in 5 bytes rval.code 0, size=383
+In ErrorContext SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 2 (itemLevel) is [APPLICATION 548] encoded in 3 bytes, of frame 378
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=378, tm=0, step=0, tagno=0)
+Fetching tag from {0084590D,378}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (2)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 378 in 5 bytes rval.code 0, size=378
+SEQUENCE ErrorContext Leftover: -1, size = 373
+In ErrorContextList SET OF ErrorContext code 0 consumed 21
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=371, tm=0, step=0, tagno=0)
+Fetching tag from {00845914,371}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 367
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 367
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=367, tm=0, step=0, tagno=0)
+Fetching tag from {00845918,367}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (9)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 367 in 5 bytes rval.code 0, size=367
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 362
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=362, tm=0, step=0, tagno=0)
+Fetching tag from {0084591D,362}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (3)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 362 in 5 bytes rval.code 0, size=362
+SEQUENCE ErrorContext Leftover: -1, size = 357
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=355, tm=0, step=0, tagno=0)
+Fetching tag from {00845924,355}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 351
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 351
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=351, tm=0, step=0, tagno=0)
+Fetching tag from {00845928,351}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (38)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 351 in 5 bytes rval.code 0, size=351
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 547] encoded in 3 bytes, of frame 346
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemOccurrence as INTEGER (tm=0)
+ber_check_tags(ItemOccurrence, size=346, tm=0, step=0, tagno=0)
+Fetching tag from {0084592D,346}: len 3, step 0, tagno 0 got [APPLICATION 547]
+Fetching len = 1
+ItemOccurrence length is 1 bytes
+Took 5/1 bytes to encode ItemOccurrence (1)
+In ErrorContext SEQUENCE decoded 1 ItemOccurrence of 346 in 5 bytes rval.code 0, size=346
+In ErrorContext SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 2 (itemLevel) is [APPLICATION 548] encoded in 3 bytes, of frame 341
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=341, tm=0, step=0, tagno=0)
+Fetching tag from {00845932,341}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (4)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 341 in 5 bytes rval.code 0, size=341
+SEQUENCE ErrorContext Leftover: -1, size = 336
+In ErrorContextList SET OF ErrorContext code 0 consumed 21
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=334, tm=0, step=0, tagno=0)
+Fetching tag from {00845939,334}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 330
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 330
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=330, tm=0, step=0, tagno=0)
+Fetching tag from {0084593D,330}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (39)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 330 in 5 bytes rval.code 0, size=330
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 325
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=325, tm=0, step=0, tagno=0)
+Fetching tag from {00845942,325}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (5)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 325 in 5 bytes rval.code 0, size=325
+SEQUENCE ErrorContext Leftover: -1, size = 320
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=318, tm=0, step=0, tagno=0)
+Fetching tag from {00845949,318}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 314
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 314
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=314, tm=0, step=0, tagno=0)
+Fetching tag from {0084594D,314}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (70)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 314 in 5 bytes rval.code 0, size=314
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 547] encoded in 3 bytes, of frame 309
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemOccurrence as INTEGER (tm=0)
+ber_check_tags(ItemOccurrence, size=309, tm=0, step=0, tagno=0)
+Fetching tag from {00845952,309}: len 3, step 0, tagno 0 got [APPLICATION 547]
+Fetching len = 1
+ItemOccurrence length is 1 bytes
+Took 5/1 bytes to encode ItemOccurrence (1)
+In ErrorContext SEQUENCE decoded 1 ItemOccurrence of 309 in 5 bytes rval.code 0, size=309
+In ErrorContext SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 2 (itemLevel) is [APPLICATION 548] encoded in 3 bytes, of frame 304
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=304, tm=0, step=0, tagno=0)
+Fetching tag from {00845957,304}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (6)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 304 in 5 bytes rval.code 0, size=304
+SEQUENCE ErrorContext Leftover: -1, size = 299
+In ErrorContextList SET OF ErrorContext code 0 consumed 21
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=297, tm=0, step=0, tagno=0)
+Fetching tag from {0084595E,297}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 293
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 293
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=293, tm=0, step=0, tagno=0)
+Fetching tag from {00845962,293}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (69)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 293 in 5 bytes rval.code 0, size=293
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 288
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=288, tm=0, step=0, tagno=0)
+Fetching tag from {00845967,288}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (7)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 288 in 5 bytes rval.code 0, size=288
+SEQUENCE ErrorContext Leftover: -1, size = 283
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=281, tm=0, step=0, tagno=0)
+Fetching tag from {0084596E,281}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 277
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 277
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=277, tm=0, step=0, tagno=0)
+Fetching tag from {00845972,277}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (64)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 277 in 5 bytes rval.code 0, size=277
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 547] encoded in 3 bytes, of frame 272
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemOccurrence as INTEGER (tm=0)
+ber_check_tags(ItemOccurrence, size=272, tm=0, step=0, tagno=0)
+Fetching tag from {00845977,272}: len 3, step 0, tagno 0 got [APPLICATION 547]
+Fetching len = 1
+ItemOccurrence length is 1 bytes
+Took 5/1 bytes to encode ItemOccurrence (1)
+In ErrorContext SEQUENCE decoded 1 ItemOccurrence of 272 in 5 bytes rval.code 0, size=272
+In ErrorContext SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 2 (itemLevel) is [APPLICATION 548] encoded in 3 bytes, of frame 267
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=267, tm=0, step=0, tagno=0)
+Fetching tag from {0084597C,267}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (8)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 267 in 5 bytes rval.code 0, size=267
+SEQUENCE ErrorContext Leftover: -1, size = 262
+In ErrorContextList SET OF ErrorContext code 0 consumed 21
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=260, tm=0, step=0, tagno=0)
+Fetching tag from {00845983,260}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 256
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 256
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=256, tm=0, step=0, tagno=0)
+Fetching tag from {00845987,256}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (63)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 256 in 5 bytes rval.code 0, size=256
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 251
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=251, tm=0, step=0, tagno=0)
+Fetching tag from {0084598C,251}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (9)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 251 in 5 bytes rval.code 0, size=251
+SEQUENCE ErrorContext Leftover: -1, size = 246
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=244, tm=0, step=0, tagno=0)
+Fetching tag from {00845993,244}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 240
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 240
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=240, tm=0, step=0, tagno=0)
+Fetching tag from {00845997,240}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (62)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 240 in 5 bytes rval.code 0, size=240
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 235
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=235, tm=0, step=0, tagno=0)
+Fetching tag from {0084599C,235}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (10)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 235 in 5 bytes rval.code 0, size=235
+SEQUENCE ErrorContext Leftover: -1, size = 230
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+In ErrorDetail SEQUENCE decoded 0 ErrorContextList of 412 in 186 bytes rval.code 0, size=412
+In ErrorDetail SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorDetail SEQUENCE for element 1 (itemOffset) is [APPLICATION 519] encoded in 3 bytes, of frame 226
+Inside SEQUENCE ErrorDetail MF2
+Decoding ErrorCode as INTEGER (tm=0)
+ber_check_tags(ErrorCode, size=226, tm=0, step=0, tagno=0)
+Fetching tag from {008459A5,226}: len 3, step 0, tagno 0 got [APPLICATION 519]
+Fetching len = 1
+ErrorCode length is 2 bytes
+Took 6/2 bytes to encode ErrorCode (200)
+In ErrorDetail SEQUENCE decoded 2 ErrorCode of 226 in 6 bytes rval.code 0, size=226
+SEQUENCE ErrorDetail Leftover: -1, size = 220
+In ErrorDetailList SET OF ErrorDetail code 0 consumed 198
+Decoding ErrorDetail as SEQUENCE
+ber_check_tags(ErrorDetail, size=218, tm=0, step=0, tagno=0)
+Fetching tag from {008459AD,218}: len 3, step 0, tagno 0 got [APPLICATION 521]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 214
+In ErrorDetail SEQUENCE left -1, edx=0 flags=1 opt=2 ec=3
+Current tag in ErrorDetail SEQUENCE for element 0 (errorContext) is [APPLICATION 549] encoded in 3 bytes, of frame 214
+Inside SEQUENCE ErrorDetail MF2
+Decoding ErrorContextList as SET OF
+ber_check_tags(ErrorContextList, size=214, tm=0, step=0, tagno=0)
+Fetching tag from {008459B1,214}: len 3, step 0, tagno 0 got [APPLICATION 549]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 210
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=210, tm=0, step=0, tagno=0)
+Fetching tag from {008459B5,210}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 206
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 206
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=206, tm=0, step=0, tagno=0)
+Fetching tag from {008459B9,206}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (1)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 206 in 5 bytes rval.code 0, size=206
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 201
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=201, tm=0, step=0, tagno=0)
+Fetching tag from {008459BE,201}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (1)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 201 in 5 bytes rval.code 0, size=201
+SEQUENCE ErrorContext Leftover: -1, size = 196
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=194, tm=0, step=0, tagno=0)
+Fetching tag from {008459C5,194}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 190
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 190
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=190, tm=0, step=0, tagno=0)
+Fetching tag from {008459C9,190}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (3)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 190 in 5 bytes rval.code 0, size=190
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 547] encoded in 3 bytes, of frame 185
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemOccurrence as INTEGER (tm=0)
+ber_check_tags(ItemOccurrence, size=185, tm=0, step=0, tagno=0)
+Fetching tag from {008459CE,185}: len 3, step 0, tagno 0 got [APPLICATION 547]
+Fetching len = 1
+ItemOccurrence length is 1 bytes
+Took 5/1 bytes to encode ItemOccurrence (11)
+In ErrorContext SEQUENCE decoded 1 ItemOccurrence of 185 in 5 bytes rval.code 0, size=185
+In ErrorContext SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 2 (itemLevel) is [APPLICATION 548] encoded in 3 bytes, of frame 180
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=180, tm=0, step=0, tagno=0)
+Fetching tag from {008459D3,180}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (2)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 180 in 5 bytes rval.code 0, size=180
+SEQUENCE ErrorContext Leftover: -1, size = 175
+In ErrorContextList SET OF ErrorContext code 0 consumed 21
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=173, tm=0, step=0, tagno=0)
+Fetching tag from {008459DA,173}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 169
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 169
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=169, tm=0, step=0, tagno=0)
+Fetching tag from {008459DE,169}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (9)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 169 in 5 bytes rval.code 0, size=169
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 164
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=164, tm=0, step=0, tagno=0)
+Fetching tag from {008459E3,164}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (3)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 164 in 5 bytes rval.code 0, size=164
+SEQUENCE ErrorContext Leftover: -1, size = 159
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=157, tm=0, step=0, tagno=0)
+Fetching tag from {008459EA,157}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 153
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 153
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=153, tm=0, step=0, tagno=0)
+Fetching tag from {008459EE,153}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 2 bytes
+Took 6/2 bytes to encode PathItemId (147)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 153 in 6 bytes rval.code 0, size=153
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 147
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=147, tm=0, step=0, tagno=0)
+Fetching tag from {008459F4,147}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (4)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 147 in 5 bytes rval.code 0, size=147
+SEQUENCE ErrorContext Leftover: -1, size = 142
+In ErrorContextList SET OF ErrorContext code 0 consumed 17
+Decoding ErrorContext as SEQUENCE
+ber_check_tags(ErrorContext, size=140, tm=0, step=0, tagno=0)
+Fetching tag from {008459FB,140}: len 3, step 0, tagno 0 got [APPLICATION 545]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 136
+In ErrorContext SEQUENCE left -1, edx=0 flags=0 opt=0 ec=3
+Current tag in ErrorContext SEQUENCE for element 0 (pathItemId) is [APPLICATION 546] encoded in 3 bytes, of frame 136
+Inside SEQUENCE ErrorContext MF2
+Decoding PathItemId as INTEGER (tm=0)
+ber_check_tags(PathItemId, size=136, tm=0, step=0, tagno=0)
+Fetching tag from {008459FF,136}: len 3, step 0, tagno 0 got [APPLICATION 546]
+Fetching len = 1
+PathItemId length is 1 bytes
+Took 5/1 bytes to encode PathItemId (89)
+In ErrorContext SEQUENCE decoded 0 PathItemId of 136 in 5 bytes rval.code 0, size=136
+In ErrorContext SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorContext SEQUENCE for element 1 (itemOccurrence) is [APPLICATION 548] encoded in 3 bytes, of frame 131
+Inside SEQUENCE ErrorContext MF2
+Decoding ItemLevel as INTEGER (tm=0)
+ber_check_tags(ItemLevel, size=131, tm=0, step=0, tagno=0)
+Fetching tag from {00845A04,131}: len 3, step 0, tagno 0 got [APPLICATION 548]
+Fetching len = 1
+ItemLevel length is 1 bytes
+Took 5/1 bytes to encode ItemLevel (5)
+In ErrorContext SEQUENCE decoded 2 ItemLevel of 131 in 5 bytes rval.code 0, size=131
+SEQUENCE ErrorContext Leftover: -1, size = 126
+In ErrorContextList SET OF ErrorContext code 0 consumed 16
+In ErrorDetail SEQUENCE decoded 0 ErrorContextList of 214 in 92 bytes rval.code 0, size=214
+In ErrorDetail SEQUENCE left -1, edx=1 flags=1 opt=1 ec=3
+Current tag in ErrorDetail SEQUENCE for element 1 (itemOffset) is [APPLICATION 519] encoded in 3 bytes, of frame 122
+Inside SEQUENCE ErrorDetail MF2
+Decoding ErrorCode as INTEGER (tm=0)
+ber_check_tags(ErrorCode, size=122, tm=0, step=0, tagno=0)
+Fetching tag from {00845A0D,122}: len 3, step 0, tagno 0 got [APPLICATION 519]
+Fetching len = 1
+ErrorCode length is 1 bytes
+Took 5/1 bytes to encode ErrorCode (41)
+In ErrorDetail SEQUENCE decoded 2 ErrorCode of 122 in 5 bytes rval.code 0, size=122
+SEQUENCE ErrorDetail Leftover: -1, size = 117
+In ErrorDetailList SET OF ErrorDetail code 0 consumed 103
+In SevereReturn SEQUENCE decoded 2 ErrorDetailList of 420 in 307 bytes rval.code 0, size=420
+In SevereReturn SEQUENCE left -1, edx=3 flags=1 opt=1 ec=4
+Current tag in SevereReturn SEQUENCE for element 3 (operatorSpecList) is [APPLICATION 551] encoded in 3 bytes, of frame 113
+Inside SEQUENCE SevereReturn MF2
+Decoding OperatorSpecList as SET OF
+ber_check_tags(OperatorSpecList, size=113, tm=0, step=0, tagno=0)
+Fetching tag from {00845A16,113}: len 3, step 0, tagno 0 got [APPLICATION 551]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 109
+Decoding OperatorSpecInformation as OCTET STRING (frame 109)
+ber_check_tags(OperatorSpecInformation, size=109, tm=0, step=0, tagno=0)
+Fetching tag from {00845A1A,109}: len 3, step 0, tagno 0 got [APPLICATION 163]
+Fetching len = 1
+Reallocating into 32
+Took 20 bytes to encode OperatorSpecInformation: [IOTDate:20141001]:16
+In OperatorSpecList SET OF OperatorSpecInformation code 0 consumed 20
+Decoding OperatorSpecInformation as OCTET STRING (frame 89)
+ber_check_tags(OperatorSpecInformation, size=89, tm=0, step=0, tagno=0)
+Fetching tag from {00845A2E,89}: len 3, step 0, tagno 0 got [APPLICATION 163]
+Fetching len = 1
+Reallocating into 16
+Took 19 bytes to encode OperatorSpecInformation: [ExpCharge:66258]:15
+In OperatorSpecList SET OF OperatorSpecInformation code 0 consumed 19
+Decoding OperatorSpecInformation as OCTET STRING (frame 70)
+ber_check_tags(OperatorSpecInformation, size=70, tm=0, step=0, tagno=0)
+Fetching tag from {00845A41,70}: len 3, step 0, tagno 0 got [APPLICATION 163]
+Fetching len = 1
+Reallocating into 64
+Took 37 bytes to encode OperatorSpecInformation: [Calculation:1*3=0.000, 1*57=0.110]:33
+In OperatorSpecList SET OF OperatorSpecInformation code 0 consumed 37
+In SevereReturn SEQUENCE decoded 3 OperatorSpecList of 113 in 82 bytes rval.code 0, size=113
+SEQUENCE SevereReturn Leftover: -1, size = 31
+CHOICE ReturnDetail Leftover: -1, size = 29, tm=0, tc=0
+In ReturnDetailList SET OF ReturnDetail code 0 consumed 664
+In ReturnBatch SEQUENCE decoded 1 ReturnDetailList of 1378 in 1351 bytes rval.code 0, size=1378
+In ReturnBatch SEQUENCE left -1, edx=2 flags=0 opt=0 ec=3
+Current tag in ReturnBatch SEQUENCE for element 2 (rapAuditControlInfo) is [APPLICATION 541] encoded in 3 bytes, of frame 27
+Inside SEQUENCE ReturnBatch MF2
+Decoding RapAuditControlInfo as SEQUENCE
+ber_check_tags(RapAuditControlInfo, size=27, tm=0, step=0, tagno=0)
+Fetching tag from {00845A6C,27}: len 3, step 0, tagno 0 got [APPLICATION 541]
+Fetching len = 1
+Structure consumes -1 bytes, buffer 23
+In RapAuditControlInfo SEQUENCE left -1, edx=0 flags=0 opt=0 ec=4
+Current tag in RapAuditControlInfo SEQUENCE for element 0 (totalSevereReturnValue) is [APPLICATION 533] encoded in 3 bytes, of frame 23
+Inside SEQUENCE RapAuditControlInfo MF2
+Decoding TotalSevereReturnValue as OCTET STRING (frame 23)
+ber_check_tags(TotalSevereReturnValue, size=23, tm=0, step=0, tagno=0)
+Fetching tag from {00845A70,23}: len 3, step 0, tagno 0 got [APPLICATION 533]
+Fetching len = 1
+Reallocating into 16
+Took 7 bytes to encode TotalSevereReturnValue: [eû]:3
+In RapAuditControlInfo SEQUENCE decoded 0 TotalSevereReturnValue of 23 in 7 bytes rval.code 0, size=23
+In RapAuditControlInfo SEQUENCE left -1, edx=1 flags=0 opt=0 ec=4
+Current tag in RapAuditControlInfo SEQUENCE for element 1 (returnDetailsCount) is [APPLICATION 528] encoded in 3 bytes, of frame 16
+Inside SEQUENCE RapAuditControlInfo MF2
+Decoding ReturnDetailsCount as INTEGER (tm=0)
+ber_check_tags(ReturnDetailsCount, size=16, tm=0, step=0, tagno=0)
+Fetching tag from {00845A77,16}: len 3, step 0, tagno 0 got [APPLICATION 528]
+Fetching len = 1
+ReturnDetailsCount length is 1 bytes
+Took 5/1 bytes to encode ReturnDetailsCount (2)
+In RapAuditControlInfo SEQUENCE decoded 1 ReturnDetailsCount of 16 in 5 bytes rval.code 0, size=16
+In RapAuditControlInfo SEQUENCE left -1, edx=2 flags=1 opt=2 ec=4
+Current tag in RapAuditControlInfo SEQUENCE for element 2 (operatorSpecList) is [APPLICATION 553] encoded in 3 bytes, of frame 11
+Inside SEQUENCE RapAuditControlInfo MF2
+Decoding TotalSevereReturnTax as OCTET STRING (frame 11)
+ber_check_tags(TotalSevereReturnTax, size=11, tm=0, step=0, tagno=0)
+Fetching tag from {00845A7C,11}: len 3, step 0, tagno 0 got [APPLICATION 553]
+Fetching len = 1
+Reallocating into 16
+Took 7 bytes to encode TotalSevereReturnTax: [(]:3
+In RapAuditControlInfo SEQUENCE decoded 3 TotalSevereReturnTax of 11 in 7 bytes rval.code 0, size=11
+SEQUENCE RapAuditControlInfo Leftover: -1, size = 4
+In ReturnBatch SEQUE

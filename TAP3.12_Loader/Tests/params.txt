@@ -1,0 +1,5 @@
+filename: C:\Projects\TAP3\TestTAPs\TDRUSBDRUS2700009
+fileID: 165
+roamingHubID: 111
+pConfigFilename: 
+strFileID: 165roamingHubID: 111

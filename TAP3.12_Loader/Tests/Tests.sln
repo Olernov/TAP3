@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tests", "Tests.vcxproj", "{AB7C6820-4F4E-45AF-A22F-A125F9C35873}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B3558AE-4F25-4C3B-9CB7-256D8D2E3C65}"
+	ProjectSection(SolutionItems) = preProject
+		ConfigContainer.cpp = ConfigContainer.cpp
+		ConfigContainer.h = ConfigContainer.h
+		OTL_Header.h = OTL_Header.h
+		otlv4.h = otlv4.h
+		Tests.cpp = Tests.cpp
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB7C6820-4F4E-45AF-A22F-A125F9C35873}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AB7C6820-4F4E-45AF-A22F-A125F9C35873}.Debug|Win32.Build.0 = Debug|Win32
+		{AB7C6820-4F4E-45AF-A22F-A125F9C35873}.Release|Win32.ActiveCfg = Release|Win32
+		{AB7C6820-4F4E-45AF-A22F-A125F9C35873}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
